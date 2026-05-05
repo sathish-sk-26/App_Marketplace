@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
+  base: '/App_Marketplace/',
   plugins: [vue()],
   resolve: {
     alias: {
