@@ -1,0 +1,59 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--gray-900);
+  font-family: var(--font-sans);
+  font-size: var(--hr-text-md);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+img { max-width: 100%; display: block; }
+
+/* RTL: flip horizontal-only utilities. Use logical properties
+   (margin-inline-*, padding-inline-*, inset-inline-*) wherever possible
+   so the layout mirrors automatically when html[dir="rtl"]. */
+[dir="rtl"] .flip-on-rtl { transform: scaleX(-1); }
+
+/* Reusable container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+/* Scrollbar polish */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--gray-200);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
+
+/* Sticky helpers */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface);
+}
+
+/* Visually-hidden (a11y) */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Focus ring — WCAG 2.1 AA contrast */
+:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
