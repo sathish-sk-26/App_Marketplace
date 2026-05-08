@@ -10,7 +10,8 @@
 
       <nav class="primary-nav" aria-label="Primary">
         <a href="#" class="nav-link">App dashboard</a>
-        <a href="#" class="nav-link">My apps</a>
+        <button @click="router.push('/marketplace/apps/resource-centre')" class="nav-link">My apps</button>
+        <button @click="router.push('/marketplace/ai-agents/E.D.I.D.H')" class="nav-link">AI Agents</button>
         <a href="#" class="nav-link has-dot">
           Product updates
           <span class="dot" aria-label="new updates" />
@@ -33,7 +34,10 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import Icon from '@/components/Icon.vue'
+
+const router = useRouter()
 </script>
 
 <style scoped>
@@ -65,6 +69,9 @@ import Icon from '@/components/Icon.vue'
   font-size: var(--hr-text-sm);
   font-weight: 500;
   padding: 4px 2px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 .nav-link:hover { color: var(--gray-900); }
 .nav-link.has-dot { display: inline-flex; align-items: center; gap: 6px; }

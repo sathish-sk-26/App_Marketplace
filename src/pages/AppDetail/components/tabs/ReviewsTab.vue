@@ -4,12 +4,14 @@
       <!-- Left sidebar: Rating summary -->
       <aside class="sidebar">
         <div class="rating-card">
-          <div class="rating-display">
-            <span class="rating-number">{{ app.rating.toFixed(1) }}</span>
-            <span class="rating-max">/4</span>
+          <div class="rating-summary">
+            <div class="rating-display">
+              <span class="rating-number">{{ app.rating.toFixed(1) }}</span>
+              <span class="rating-max">/4</span>
+            </div>
+            <StarRating :model-value="app.rating" size="md" />
+            <p class="rating-note">Based on {{ app.reviewCount.toLocaleString() }} out of 549 reviews</p>
           </div>
-          <StarRating :model-value="app.rating" size="md" />
-          <p class="rating-note">Based on {{ app.reviewCount.toLocaleString() }} out of 549 reviews</p>
 
           <div class="rating-distribution">
             <div class="dist-items">
@@ -37,7 +39,15 @@
         <!-- AI Summary Section -->
         <div class="ai-summary-section">
           <div class="ai-header">
-            <Icon name="ai" :size="20" class="ai-icon" />
+            <svg class="ai-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
+              <path d="M22.7267 8.39L23.78 6.05667L26.1133 5.00333C26.6333 4.76333 26.6333 4.03 26.1133 3.79L23.78 2.73667L22.7267 0.39C22.4867 -0.13 21.7533 -0.13 21.5133 0.39L20.46 2.72333L18.1133 3.77667C17.5933 4.01667 17.5933 4.75 18.1133 4.99L20.4467 6.04333L21.5 8.39C21.74 8.91 22.4867 8.91 22.7267 8.39ZM12.1133 10.39L9.99333 5.72333C9.52667 4.68333 8.03333 4.68333 7.56667 5.72333L5.44667 10.39L0.78 12.51C-0.26 12.99 -0.26 14.47 0.78 14.9367L5.44667 17.0567L7.56667 21.7233C8.04667 22.7633 9.52667 22.7633 9.99333 21.7233L12.1133 17.0567L16.78 14.9367C17.82 14.4567 17.82 12.9767 16.78 12.51L12.1133 10.39ZM21.5 19.0567L20.4467 21.39L18.1133 22.4433C17.5933 22.6833 17.5933 23.4167 18.1133 23.6567L20.4467 24.71L21.5 27.0567C21.74 27.5767 22.4733 27.5767 22.7133 27.0567L23.7667 24.7233L26.1133 23.67C26.6333 23.43 26.6333 22.6967 26.1133 22.4567L23.78 21.4033L22.7267 19.0567C22.4867 18.5367 21.74 18.5367 21.5 19.0567Z" fill="url(#paint0_linear_6892_24513)"/>
+              <defs>
+                <linearGradient id="paint0_linear_6892_24513" x1="13.2517" y1="0" x2="13.2517" y2="27.4467" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#9B8AFB"/>
+                  <stop offset="1" stop-color="#3E1C96"/>
+                </linearGradient>
+              </defs>
+            </svg>
             <h3 class="ai-title">What customers think</h3>
           </div>
           <p class="ai-text">{{ getAISummary() }}</p>
@@ -262,6 +272,12 @@ function getFilteredReviews() {
   flex-direction: column;
   gap: 12px;
 }
+.rating-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 .rating-display {
   display: flex;
   align-items: baseline;
@@ -394,8 +410,8 @@ function getFilteredReviews() {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  /* padding-bottom: 12px; */
+  /* border-bottom: 1px solid var(--border); */
 }
 .reviews-count {
   margin: 0;
@@ -412,11 +428,10 @@ function getFilteredReviews() {
 
 /* AI Summary Section */
 .ai-summary-section {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: 8px;
   padding: 16px;
-  background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-25) 100%);
   margin-bottom: 16px;
+  border: 1px solid var(--color-accent-purple-300, #BDB4FE);
 }
 .ai-header {
   display: flex;
@@ -425,14 +440,15 @@ function getFilteredReviews() {
   margin-bottom: 12px;
 }
 .ai-icon {
-  color: var(--primary-600);
   flex-shrink: 0;
+  width: 20px;
+  height: 20px;
 }
 .ai-title {
   margin: 0;
   font-size: var(--hr-text-md);
   font-weight: 700;
-  color: var(--gray-900);
+  color: var(--color-accent-purple-700, #5925DC);
 }
 .ai-text {
   margin: 0;

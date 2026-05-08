@@ -21,6 +21,7 @@
             />
           </h1>
           <p v-if="!compact" class="tagline">{{ app.tagline }}</p>
+          <p v-if="app.developer" class="developer">By {{ app.developer }}</p>
         </div>
       </div>
 
@@ -121,17 +122,28 @@ onUnmounted(() => {
   margin: 4px 0 0;
   color: var(--gray-500); font-size: var(--hr-text-sm);
 }
+.developer {
+  margin: 2px 0 0;
+  color: var(--gray-400);
+  font-size: var(--hr-text-xs);
+  font-weight: 500;
+}
 
 .cta { display: flex; align-items: center; gap: 8px; }
 
 .scope-select { position: relative; }
 .scope-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  height: 40px; padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--surface); color: var(--gray-900);
-  font-size: var(--hr-text-sm); font-weight: 500;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--gray-900);
+  font-size: var(--hr-text-sm);
+  font-weight: 500;
 }
 .scope-btn:hover { border-color: var(--gray-300); }
 .scope-menu {
@@ -160,7 +172,7 @@ onUnmounted(() => {
 .scope-menu li.active { color: var(--primary-600); }
 
 .btn {
-  height: 40px; padding: 0 18px; border-radius: var(--radius-md);
+  height: 40px; padding: 0 18px; border-radius: 4px;
   border: 1px solid transparent; font-weight: 600;
   font-size: var(--hr-text-sm);
 }
@@ -170,7 +182,7 @@ onUnmounted(() => {
 .btn-primary:hover { background: var(--primary-600); }
 
 .icon-btn {
-  width: 40px; height: 40px; border-radius: var(--radius-md);
+  width: 40px; height: 40px; border-radius: 4px;
   border: 1px solid var(--border); background: var(--surface);
   color: var(--gray-700);
   display: inline-flex; align-items: center; justify-content: center;

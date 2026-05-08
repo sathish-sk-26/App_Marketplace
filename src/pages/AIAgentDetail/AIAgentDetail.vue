@@ -59,20 +59,20 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import { appData } from './data.js'
+import { appData } from '@/pages/AppDetail/data.js'
 
-import TopNav     from './components/TopNav.vue'
-import AppHeader  from './components/AppHeader.vue'
-import AppStats   from './components/AppStats.vue'
-import TabsBar    from './components/TabsBar.vue'
+import TopNav     from '@/pages/AppDetail/components/TopNav.vue'
+import AppHeader  from '@/pages/AppDetail/components/AppHeader.vue'
+import AppStats   from '@/pages/AppDetail/components/AppStats.vue'
+import TabsBar    from '@/pages/AppDetail/components/TabsBar.vue'
 import Icon       from '@/components/Icon.vue'
 
-import OverviewTab            from './components/tabs/OverviewTab.vue'
-import PricingTab             from './components/tabs/PricingTab.vue'
-import PermissionsTab         from './components/tabs/PermissionsTab.vue'
-import ReviewsTab             from './components/tabs/ReviewsTab.vue'
-import GetStartedTab          from './components/tabs/GetStartedTab.vue'
-import ExternalConnectionTab  from './components/tabs/ExternalConnectionTab.vue'
+import OverviewTab            from '@/pages/AppDetail/components/tabs/OverviewTab.vue'
+import PricingTab             from '@/pages/AppDetail/components/tabs/PricingTab.vue'
+import PermissionsTab         from '@/pages/AppDetail/components/tabs/PermissionsTab.vue'
+import ReviewsTab             from '@/pages/AppDetail/components/tabs/ReviewsTab.vue'
+import GetStartedTab          from '@/pages/AppDetail/components/tabs/GetStartedTab.vue'
+import ExternalConnectionTab  from '@/pages/AppDetail/components/tabs/ExternalConnectionTab.vue'
 
 const tabs = [
   { id: 'overview',           label: 'Overview' },
@@ -107,7 +107,13 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 </script>
 
 <style scoped>
-.page { min-height: 100vh; background: var(--bg); }
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e6e3ff 0%, var(--color-neutral-white-base, #FFF) 70%), var(--color-neutral-white-base, #FFF);
+  background-size: 100% 420px;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+}
 
 /* Sticky compact header */
 .sticky-header {

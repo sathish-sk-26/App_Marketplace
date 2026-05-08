@@ -5,74 +5,166 @@
       This app requests access to the following resources within your account.
     </p>
 
-    <div class="table" role="table" aria-label="App permissions">
-      <div class="thead" role="row">
-        <span role="columnheader">Resource</span>
-        <span role="columnheader">Access level</span>
-        <span role="columnheader">Description</span>
-      </div>
-      <div v-for="p in app.permissions" :key="p.scope" class="trow" role="row">
-        <span role="cell" class="scope">
-          <Icon name="lock" :size="14" />
-          {{ p.scope }}
-        </span>
-        <span role="cell">
-          <span class="badge" :class="p.access === 'Read' ? 'badge-info' : 'badge-warn'">
-            {{ p.access }}
-          </span>
-        </span>
-        <span role="cell" class="muted">{{ p.description }}</span>
+    <div class="permissions-list">
+      <div v-for="(permission, index) in app.permissions" :key="index" class="permission-group">
+        <button
+          class="permission-header"
+          :class="{ expanded: expandedIndex === index }"
+          @click="expandedIndex = expandedIndex === index ? -1 : index"
+        >
+          <div class="header-left">
+            <Icon :name="permission.icon" :size="20" />
+            <span class="permission-name">{{ permission.name }}</span>
+          </div>
+          <Icon
+            name="chevronDown"
+            :size="20"
+            class="chevron"
+            :class="{ rotated: expandedIndex === index }"
+          />
+        </button>
+
+        <div v-if="expandedIndex === index" class="permission-items">
+          <div class="permission-item">
+            <span class="item-description">{{ getCombinedDescription(permission.children) }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import Icon from '@/components/Icon.vue'
+
 defineProps({ app: { type: Object, required: true } })
+
+const expandedIndex = ref(-1)
+
+function getCombinedDescription(children) {
+  return children.map(child => child.description).join(' and ')
+}
+
+function getBadgeClass(access) {
+  if (access === 'Read') return 'badge-read'
+  if (access === 'Write') return 'badge-write'
+  return 'badge-default'
+}
 </script>
 
 <style scoped>
-.permissions { display: flex; flex-direction: column; gap: 16px; }
-.section-title { margin: 0; font-size: var(--hr-text-xl); font-weight: 600; }
-.lead { margin: 0; color: var(--gray-600); }
-
-.table {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--surface);
-}
-.thead, .trow {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+.permissions {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  padding: 14px 20px;
-  align-items: center;
 }
-.thead {
-  background: var(--gray-50);
-  font-size: var(--hr-text-xs);
+
+.section-title {
+  margin: 0;
+  font-size: var(--hr-text-xl);
   font-weight: 600;
+}
+
+.lead {
+  margin: 0;
   color: var(--gray-600);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
-.trow + .trow { border-top: 1px solid var(--border); }
-.trow { font-size: var(--hr-text-sm); }
-.scope { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
-.muted { color: var(--gray-600); }
 
-.badge {
-  display: inline-block;
-  padding: 2px 8px; border-radius: 999px;
-  font-size: var(--hr-text-xs); font-weight: 500;
+.permissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
-.badge-info { background: var(--primary-50); color: var(--primary-700); }
-.badge-warn { background: var(--warning-50); color: var(--warning-600); }
 
-@media (max-width: 720px) {
-  .thead { display: none; }
-  .trow { grid-template-columns: 1fr; gap: 6px; }
+.permission-group {
+  border: 1px solid var(--color-neutral-gray-200, #EAECF0);
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--color-neutral-white-base, #FFF);
+  border-top: none;
+}
+
+.permission-group:first-child {
+  border-radius: 8px 8px 0 0;
+  border-top: 1px solid var(--color-neutral-gray-200, #EAECF0);
+}
+
+.permission-group:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.permission-group:only-child {
+  border-radius: 8px;
+  border-top: 1px solid var(--color-neutral-gray-200, #EAECF0);
+}
+
+.permission-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: var(--hr-text-md);
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.permission-header:hover {
+  background: var(--color-neutral-gray-100, #F2F4F7);
+}
+
+.permission-header.expanded {
+  background: var(--color-neutral-gray-100, #F2F4F7);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.permission-name {
+  color: var(--color-neutral-gray-900, #101828);
+  font-family: Inter;
+  font-size: var(--font-size-md, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-semibold, 600);
+  line-height: var(--font-line-height-sm, 17px);
+  letter-spacing: var(--font-letter-spacing-normal, 0);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+  color: var(--gray-600);
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.permission-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.permission-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 20px 12px 48px;
+}
+
+.item-description {
+  color: var(--gray-700);
+  font-size: var(--hr-text-sm);
+  line-height: 1.5;
+  width: 80%;
 }
 </style>

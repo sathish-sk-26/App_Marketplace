@@ -47,12 +47,15 @@ function move(dir) {
 .tabs-wrap::-webkit-scrollbar { display: none; }
 .tab {
   position: relative;
-  border: 0; background: transparent;
-  padding: 0 16px;
+  border: 0;
+  background: transparent;
+  padding: 0 12px;
   font-size: var(--hr-text-sm);
   font-weight: 500;
   color: var(--gray-500);
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   white-space: nowrap;
 }
 .tab:hover { color: var(--gray-800); }
