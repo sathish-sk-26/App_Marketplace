@@ -3,7 +3,7 @@
     <div class="pricing-header">
       <div>
         <div class="title-with-badge">
-          <h2 class="section-title">Pricing Plans</h2>
+          <h2 class="section-title">Pricing plans</h2>
           <Tag v-if="app.pricing.trialNote" size="lg" primary icon="">{{ app.pricing.trialNote }}</Tag>
         </div>
       </div>
@@ -21,7 +21,9 @@
 
     <div class="plans-wrapper">
       <button v-if="canScrollLeft" class="scroll-btn scroll-btn-left" @click="scrollPlans('left')">
-        <Icon name="chevronLeft" :size="20" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.42259 0.244078C6.74803 0.569515 6.74803 1.09715 6.42259 1.42259L2.01184 5.83333L6.42259 10.2441C6.74803 10.5695 6.74803 11.0972 6.42259 11.4226C6.09715 11.748 5.56951 11.748 5.24408 11.4226L0.244078 6.42259C-0.0813592 6.09715 -0.0813592 5.56951 0.244078 5.24408L5.24408 0.244078C5.56951 -0.0813593 6.09715 -0.0813593 6.42259 0.244078Z" fill="#475467"/>
+        </svg>
       </button>
 
       <div class="plans-container" ref="plansContainer">
@@ -39,7 +41,7 @@
             </div>
             <div class="price">
               <span class="amount">{{ p.price }}</span>
-              <span v-if="p.period" class="period">{{ billingPeriod === 'monthly' ? p.period : '/ year' }}</span>
+              <span v-if="p.period && p.price !== 'Custom'" class="period">/ {{ billingPeriod === 'monthly' ? 'month' : 'year' }} for agency</span>
               <Tag v-if="billingPeriod === 'yearly' && p.period" size="md" active icon="">Save 12%</Tag>
             </div>
             <p v-if="p.subtext || p.subtextMonthly" class="subtext">
@@ -51,20 +53,19 @@
                 <span>{{ f }}</span>
               </li>
             </ul>
-            <button class="btn" :class="p.highlighted ? 'btn-primary' : 'btn-secondary'">
-              {{ p.highlighted ? 'Get started' : 'Choose plan' }}
-            </button>
           </article>
         </div>
       </div>
 
       <button v-if="canScrollRight" class="scroll-btn scroll-btn-right" @click="scrollPlans('right')">
-        <Icon name="chevronRight" :size="20" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.577409 11.7559C0.251972 11.4305 0.251972 10.9029 0.577409 10.5774L5.01816 6.16667L0.577409 1.75592C0.251972 1.43048 0.251972 0.902845 0.577409 0.577408C0.902846 0.252071 1.43048 0.252071 1.75592 0.577408L6.75592 5.57741C7.08136 5.90285 7.08136 6.43048 6.75592 6.75592L1.75592 11.7559C1.43048 12.0814 0.902846 12.0814 0.577409 11.7559Z" fill="#475467"/>
+        </svg>
       </button>
     </div>
 
     <section v-if="app.pricing.usageBased && app.pricing.usageBased.length" class="usage-section">
-      <h3 class="usage-title">App also includes usage based pricing</h3>
+      <h3 class="usage-title">App also includes usage-based pricing</h3>
       <div class="usage-grid">
         <div v-for="(item, i) in app.pricing.usageBased" :key="i" class="usage-card">
           <div class="usage-icon">

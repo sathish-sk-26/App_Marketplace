@@ -1,5 +1,5 @@
 <template>
-  <div class="tag" :class="{ active, inactive, primary, rounded }" :style="sizeStyle">
+  <div class="tag" :class="{ active, inactive, primary, warning, rounded }" :style="sizeStyle">
     <Icon v-if="icon" :name="icon" :size="10" />
     <slot />
   </div>
@@ -14,6 +14,7 @@ const props = defineProps({
   inactive: { type: Boolean, default: false },
   rounded: { type: Boolean, default: false },
   primary: { type: Boolean, default: false },
+  warning: { type: Boolean, default: false },
   icon: { type: String, default: 'check' },
   size: { type: String, default: 'sm' }
 })
@@ -61,6 +62,11 @@ const sizeStyle = computed(() => {
   border: 1px solid var(--tag-gray-border-default, #D0D5DD);
   background: var(--tag-background, #FFF);
   color: var(--tag-gray-label-color-default, #344054);
+}
+.tag.warning {
+  background: #FFFAEB;
+  color: #B54708;
+  border-color: #FEDF89;
 }
 .tag.rounded {
   border-radius: 999px;

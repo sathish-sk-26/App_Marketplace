@@ -8,6 +8,7 @@
       <button v-if="modelValue.length > 0" class="clear-btn" @click.stop="$emit('clear')">
         ✕
       </button>
+      <Icon name="chevronDown" :size="16" />
     </Chip>
 
     <div v-if="showMenu" class="filter-menu-container">

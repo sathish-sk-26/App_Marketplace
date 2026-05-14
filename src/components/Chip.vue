@@ -14,20 +14,20 @@ defineProps({
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--surface);
-  color: var(--gray-700);
+  color: var(--gray-900);
   font-size: var(--hr-text-sm);
   font-weight: 500;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
 }
 .chip:hover {
   border-color: var(--gray-300);
-  background: var(--gray-50);
 }
 .chip.active {
   border-color: var(--primary-300);

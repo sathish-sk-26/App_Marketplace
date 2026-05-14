@@ -8,7 +8,7 @@
       <section class="block">
         <h1 class="section-title">
           <Icon name="package" :size="24" />
-          App Variations
+          App variations
         </h1>
         <p class="lead variations-intro">Explore different layout variations for presenting app features and integrations.</p>
 
@@ -21,7 +21,7 @@
               :class="{ active: activeVariationTab === tab }"
               @click="activeVariationTab = tab"
             >
-              {{ tab === 'variation1' ? 'Variation 1: 2-Column Layout' : tab === 'variation2' ? 'Variation 2: Single Column' : 'Variation 3: Horizontal Grid' }}
+              {{ tab === 'variation1' ? 'Variation 1: 2-column layout' : tab === 'variation2' ? 'Variation 2: Single column' : 'Variation 3: Horizontal grid' }}
             </button>
           </div>
         </div>
@@ -29,13 +29,13 @@
         <!-- Variation 1 Content -->
         <div v-if="activeVariationTab === 'variation1'" class="variation-content-inner">
           <div class="variation-description">
-            <p><strong>2-Column Layout:</strong> Label on the left (150px fixed width) with cards displayed in a grid on the right. This layout is compact and organized.</p>
+            <p><strong>2-column layout:</strong> Label on the left (150px fixed width) with cards displayed in a grid on the right. This layout is compact and organized.</p>
           </div>
 
           <!-- Conversation Provider -->
           <div class="included-layout">
             <div class="included-left">
-              <h3 class="included-heading">Conversation Provider</h3>
+              <h3 class="included-heading">Conversation provider</h3>
             </div>
             <div class="included-right">
               <div class="included-grid">
@@ -72,7 +72,7 @@
           <!-- Custom Actions -->
           <div class="included-layout">
             <div class="included-left">
-              <h3 class="included-heading">Custom Actions</h3>
+              <h3 class="included-heading">Custom actions</h3>
             </div>
             <div class="included-right">
               <div class="included-grid">
@@ -95,7 +95,7 @@
           <!-- Custom Triggers -->
           <div class="included-layout">
             <div class="included-left">
-              <h3 class="included-heading">Custom Triggers</h3>
+              <h3 class="included-heading">Custom triggers</h3>
             </div>
             <div class="included-right">
               <div class="included-grid">
@@ -134,12 +134,12 @@
         <!-- Variation 2 Content -->
         <div v-if="activeVariationTab === 'variation2'" class="variation-content-inner">
           <div class="variation-description">
-            <p><strong>Single Column Layout:</strong> Header displayed above cards in a full-width layout. This layout stacks vertically for a clean, scannable design.</p>
+            <p><strong>Single column layout:</strong> Header displayed above cards in a full-width layout. This layout stacks vertically for a clean, scannable design.</p>
           </div>
 
           <!-- Conversation Provider -->
           <div class="single-column-layout">
-            <h3 class="included-heading">Conversation Provider</h3>
+            <h3 class="included-heading">Conversation provider</h3>
             <div class="included-grid">
               <div v-for="provider in app.whatsIncluded.conversationProviders" :key="provider.name" class="included-card">
                 <Icon :name="provider.icon" :size="20" class="included-icon" />
@@ -168,7 +168,7 @@
 
           <!-- Custom Actions -->
           <div class="single-column-layout">
-            <h3 class="included-heading">Custom Actions</h3>
+            <h3 class="included-heading">Custom actions</h3>
             <div class="included-grid">
               <div v-for="(action, idx) in app.whatsIncluded.customActions" v-show="expandedActions || idx < 3" :key="action.name" class="included-card">
                 <Icon :name="action.icon" :size="20" class="included-icon" />
@@ -187,7 +187,7 @@
 
           <!-- Custom Triggers -->
           <div class="single-column-layout">
-            <h3 class="included-heading">Custom Triggers</h3>
+            <h3 class="included-heading">Custom triggers</h3>
             <div class="included-grid">
               <div v-for="(trigger, idx) in app.whatsIncluded.customTriggers" v-show="expandedTriggers || idx < 3" :key="trigger.name" class="included-card">
                 <Icon :name="trigger.icon" :size="20" class="included-icon" />
@@ -219,14 +219,14 @@
         <!-- Variation 3 Content -->
         <div v-if="activeVariationTab === 'variation3'" class="variation-content-inner">
           <div class="variation-description">
-            <p><strong>Horizontal Grid Layout:</strong> 2-column grid where sections are arranged side-by-side. This layout maximizes horizontal space for wide screens.</p>
+            <p><strong>Horizontal grid layout:</strong> 2-column grid where sections are arranged side-by-side. This layout maximizes horizontal space for wide screens.</p>
           </div>
 
           <div class="variation3-grid">
             <!-- Conversation Provider -->
             <div class="included-layout">
               <div class="included-left">
-                <h3 class="included-heading">Conversation Provider</h3>
+                <h3 class="included-heading">Conversation provider</h3>
               </div>
               <div class="included-right">
                 <div class="included-grid">
@@ -259,7 +259,7 @@
             <!-- Custom Actions -->
             <div class="included-layout">
               <div class="included-left">
-                <h3 class="included-heading">Custom Actions</h3>
+                <h3 class="included-heading">Custom actions</h3>
               </div>
               <div class="included-right">
                 <div class="included-grid">
@@ -280,7 +280,7 @@
             <!-- Custom Triggers -->
             <div class="included-layout">
               <div class="included-left">
-                <h3 class="included-heading">Custom Triggers</h3>
+                <h3 class="included-heading">Custom triggers</h3>
               </div>
               <div class="included-right">
                 <div class="included-grid">

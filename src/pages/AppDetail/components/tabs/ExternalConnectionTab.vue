@@ -1,8 +1,8 @@
 <template>
   <div class="external-connection">
     <div class="empty-state">
-      <h2 class="title">Connection Pending</h2>
-      <p class="subtitle">Let's get you connected with {{ providerName }}</p>
+      <h2 class="title">Connection pending</h2>
+      <p class="subtitle">Let's get you connected with {{ providerName }}.</p>
 
       <div class="illustration" aria-hidden="true">
         <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@ import { computed } from 'vue'
 
 const props = defineProps({ app: { type: Object, required: true } })
 
-const providerName = computed(() => props.app.externalProvider || 'Jobber')
+const providerName = computed(() => props.app.externalProvider || props.app.name)
 
 function onConnect() {
   // hook up real connection flow here

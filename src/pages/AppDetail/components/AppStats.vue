@@ -28,7 +28,7 @@
           <Tag size="lg" rounded :active="isActive(app.installableBy, 'Agency')" :inactive="!isActive(app.installableBy, 'Agency')" :icon="isActive(app.installableBy, 'Agency') ? 'check' : 'x'">Agency</Tag>
         </div>
         <div class="tag-item">
-          <Tag size="lg" rounded :active="isActive(app.installableBy, 'Sub Account')" :inactive="!isActive(app.installableBy, 'Sub Account')" :icon="isActive(app.installableBy, 'Sub Account') ? 'check' : 'x'">Sub Account</Tag>
+          <Tag size="lg" rounded :active="isActive(app.installableBy, 'Sub-account')" :inactive="!isActive(app.installableBy, 'Sub-account')" :icon="isActive(app.installableBy, 'Sub-account') ? 'check' : 'x'">Sub-account</Tag>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ const isActive = (arr, value) => Array.isArray(arr) ? arr.includes(value) : fals
 .rating-value { gap: 6px; cursor: pointer; transition: opacity 0.2s ease; justify-content: center; }
 .rating-value:hover { opacity: 0.7; }
 .num {
-  font-size: var(--hr-text-xl);
+  font-size: var(--hr-text-lg);
   font-weight: 600;
 }
 .num-md {
@@ -164,9 +164,20 @@ const isActive = (arr, value) => Array.isArray(arr) ? arr.includes(value) : fals
   align-items: center;
   gap: 4px;
 }
-@media (max-width: 900px) {
-  .stats { flex-wrap: wrap; gap: 16px; }
+@media (max-width: 1024px) {
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 16px;
+    padding: 20px;
+  }
   .stat { padding: 0; }
   .divider { display: none; }
+  .rating-value { justify-content: left; }
+}
+@media (max-width: 600px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

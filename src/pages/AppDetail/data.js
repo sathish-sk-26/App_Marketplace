@@ -2,27 +2,27 @@ export const appData = {
   id: 'resource-centre',
   name: 'Resource Centre',
   verified: true,
-  tagline: 'Test Tagline test words to be here 12323 fssdfs',
-  developer: 'MyCRMSupport',
-  iconLetter: 'h',
-  iconBg: '#F04438',
+  tagline: 'Centralise your knowledge, empower your team.',
+  developer: 'HighLevel',
+  iconLetter: 'R',
+  iconBg: '#7839EE',
 
-  rating: 4.5,
-  reviewCount: 102,
-  installs: 25000,
-  subAccountInstalls: 175,
+  rating: 4.1,
+  reviewCount: 103,
+  installs: 12800,
+  subAccountInstalls: 340,
   whiteLabel: 'Verified',
-  pricingLabel: 'Free to install',
-  pricingInfo: 'Additional charges may apply.',
-  installableBy: ['Agency'],
-  appFor: ['Sub Account'],
+  pricingLabel: 'Free',
+  pricingInfo: '',
+  installableBy: ['Agency', 'Sub-account'],
+  appFor: ['Sub-account'],
 
   scopes: ['Agency', 'Sub-account'],
   defaultScope: 'Agency',
 
   media: {
     video: {
-      title: 'Klaviyo Platform Product Tour and Demo',
+      title: 'Resource Centre platform product tour and demo',
       poster: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     },
@@ -35,7 +35,7 @@ export const appData = {
 
   about: {
     description:
-      '<h4>About Official Jobber Integration</h4><p>Jobber keeps your home service business running, even when you\'re on the move. From capturing leads to getting paid, it\'s everything you need to stay organized, close jobs faster, and keep your cash flow strong—all in one place.</p><h4>Jobber Features & Benefits</h4><p><strong>Get Noticed:</strong> Make your business the first one people find, and the one they trust most. Together, Jobber and your CRM help you build visibility, establish credibility, and turn good impressions into booked work.</p><p><strong>Win Jobs:</strong> Turn interest into income quickly and professionally. Jobber makes it easy for potential customers to reach you, get a fast, accurate quote, and book your services with confidence.</p><p><strong>Work Smarter:</strong> Spend less time on back-and-forth, and more time delivering the high-quality work that sets you apart. Jobber takes the busywork off your plate by automating tasks, simplifying scheduling, and keeping communication effortless.</p><p><strong>Boost Profits:</strong> Get paid faster, stay in control, and keep your cash flow strong. Send invoices in seconds, and get paid faster, every time—customers can pay you online, in-person or automatically.</p><h4>About the Integration</h4><p>The Jobber integration creates a direct data bridge that brings every Jobber contact into our platform without any manual effort. It synchronizes contacts across the two systems so that your team always works from the same live information.</p><p>Capture and nurture new inquiries with our marketing suite, then schedule and complete the work in Jobber before turning satisfied clients into five star reviews through our reputation tools. Campaigns built in our system can gather leads from ads or web forms, nurture them with personalized email and SMS messages, and then hand off the fully qualified opportunity to Jobber for quoting and scheduling.</p><p>Our advanced intelligence features leap into action the moment a new message or phone call arrives, ensuring that every lead is greeted and guided automatically. When a job is marked complete in Jobber, that status can trigger a reputation request in our suite, prompting delighted customers to post reviews on Google and other directories—fueling higher search rankings and undeniable social proof. You can also launch an upsell journey by scheduling a service reminder in six months.</p><p>The integration includes bi-directional triggers and actions so that every event inspires the next step. Together these seamless workflows offer home service businesses a single continuous path from first click to repeat sale, reducing overhead and accelerating response times with elegant simplicity.</p>',
+      '<h2>Resource Centre</h2><p>Resource Centre is a marketplace app that helps businesses increase user engagement via messages in a CRM application. Centralise your knowledge base, training materials, and support documentation so your team always has what they need at their fingertips.</p><p><strong>Key Features:</strong><br>Centralised document and media library<br>Role-based access for agency and sub-accounts<br>Instant search across all resources<br>Embeddable help widgets for any page<br>Version history and content approvals</p><p><strong>Use Cases:</strong><br>Onboarding new team members faster<br>Storing SOPs and playbooks<br>Sharing training videos and guides with sub-accounts<br>Building a self-serve support hub for clients</p>',
     bullets: [],
     tags: []
   },
@@ -65,33 +65,63 @@ export const appData = {
       { name: 'VAVV', icon: 'code' }
     ],
     customActions: [
-      { name: 'Remove from All Boards', description: 'Remove a contact from all...', icon: 'arrowLeft' },
-      { name: 'Check Contact Attempts', description: 'Check if a contact has be...', icon: 'check' },
-      { name: 'Check if in Stage', description: 'Check if a contact is in a ...', icon: 'check' }
+      { name: 'Remove from all boards', description: 'Remove a contact from all boards.', icon: 'arrowLeft' },
+      { name: 'Check contact attempts', description: 'Check if a contact has been attempted.', icon: 'check' },
+      { name: 'Check if in stage', description: 'Check if a contact is in a stage.', icon: 'check' },
+      { name: 'Send email notification', description: 'Send an email to the contact.', icon: 'mail' },
+      { name: 'Update contact status', description: 'Update the contact status.', icon: 'edit' },
+      { name: 'Create task for contact', description: 'Create a new task assigned to a contact.', icon: 'check' },
+      { name: 'Add contact to campaign', description: 'Add a contact to a marketing campaign.', icon: 'users' },
+      { name: 'Schedule follow-up call', description: 'Schedule a follow-up call with a contact.', icon: 'phone' }
     ],
-    customActionsExtra: 6,
+    customActionsExtra: 3,
     customTriggers: [
-      { name: 'Call Recorded', description: 'This trigger activates whe...', icon: 'play' },
-      { name: 'Call Ended', description: 'This trigger activates whe...', icon: 'phone' },
-      { name: 'Call Started', description: 'This trigger activates whe...', icon: 'volume2' }
+      { name: 'Call recorded', description: 'This trigger activates when a call is recorded.', icon: 'play' },
+      { name: 'Call ended', description: 'This trigger activates when a call ends.', icon: 'phone' },
+      { name: 'Call started', description: 'This trigger activates when a call starts.', icon: 'volume2' }
     ],
     customTriggersExtra: 0,
-    snapshots: [{ name: 'Jobber Integration Assets', icon: 'eye' }]
+    snapshots: [{ name: 'Resource Centre integration assets', icon: 'eye' }],
+    webhooks: [
+      { name: 'Contact created', description: 'Triggered when a new contact is created.', icon: 'bell' },
+      { name: 'Contact updated', description: 'Triggered when contact information is updated.', icon: 'bell' }
+    ],
+    integrations: [
+      { name: 'Slack integration', description: 'Send notifications to Slack channels.', icon: 'share2' }
+    ],
+    apiEndpoints: [
+      { name: 'REST API', description: 'Full REST API access for integrations.', icon: 'code' }
+    ]
   },
 
-  otherApps: [
-    { name: 'Adobe XD',            category: 'Graphics & Design', color: '#470137', letter: 'XD' },
-    { name: 'Mockup - UI & UX',    category: 'Graphics & Design', color: '#A78BFA', letter: 'M' },
-    { name: 'Behance',             category: 'Graphics & Design', color: '#1E40AF', letter: 'Bē' },
-    { name: 'Figurative for Figma',category: 'Graphics & Design', color: '#111111', letter: 'F' }
+  similarApps: [
+    { name: 'Klaviyo',           category: 'Email marketing',      color: '#1A1A1A', letter: 'K',  rating: 4.7, installs: 18500, description: 'Email and SMS marketing platform built for ecommerce growth.',    pricing: 'Free', whiteLabel: true,  installed: true },
+    { name: 'ActiveCampaign',    category: 'Marketing automation', color: '#356AE6', letter: 'AC', rating: 4.4, installs: 12300, description: 'Automate your marketing and sales with powerful CRM tools.',          pricing: 'Paid', whiteLabel: true  },
+    { name: 'Mailchimp',         category: 'Email marketing',      color: '#FFE01B', letter: 'M',  rating: 4.2, installs: 25000, description: 'All-in-one marketing platform for growing your audience.',            pricing: 'Paid', whiteLabel: false },
+    { name: 'HubSpot CRM',       category: 'CRM',                  color: '#FF7A59', letter: 'H',  rating: 4.8, installs: 42000, description: 'Free CRM software to manage contacts, deals, and pipelines.',        pricing: 'Paid', whiteLabel: false }
   ],
 
+  otherApps: [
+    { name: 'Adobe XD',            category: 'Graphics and design', color: '#470137', letter: 'XD', rating: 4.3, installs: 9800,  description: 'Design and prototype user experiences for web and mobile.',   pricing: 'Free', whiteLabel: true,  installed: true },
+    { name: 'Mockup - UI & UX',    category: 'Graphics and design', color: '#A78BFA', letter: 'M',  rating: 4.6, installs: 6400,  description: 'Create beautiful mockups and wireframes for any screen.',       pricing: 'Paid', whiteLabel: true  },
+    { name: 'Behance',             category: 'Graphics and design', color: '#1E40AF', letter: 'Bē', rating: 4.5, installs: 15200, description: 'Showcase your creative work and discover top design talent.',    pricing: 'Paid', whiteLabel: false },
+    { name: 'Figurative for Figma', category: 'Graphics and design', color: '#111111', letter: 'F', rating: 4.1, installs: 3200,  description: 'Advanced Figma plugin for faster, more consistent design.',    pricing: 'Paid', whiteLabel: false }
+  ],
+
+  resources: {
+    website: 'https://highlevel.com/resource-centre',
+    supportEmail: 'support@highlevel.com',
+    documentationUrl: 'https://help.highlevel.com/resource-centre',
+    supportWebsiteUrl: 'https://highlevel.com/support',
+    supportPhone: '+1-888-732-4197'
+  },
+
   appDetails: {
-    categories: ['Advertising', 'Lead Generation', 'Sales Enablement'],
-    businessNiche: ['Advertising Agency', 'Marketing Agency'],
-    version: '1.0.0',
-    updated: 'Mar 2026',
-    developer: 'MyCRMSupport'
+    categories: ['Content Management', 'Knowledge Base', 'Productivity'],
+    businessNiche: ['Agency', 'SaaS', 'Professional Services'],
+    version: '2.4.1',
+    updated: 'April 2026',
+    developer: 'HighLevel'
   },
 
   sidebar: {
@@ -107,89 +137,89 @@ export const appData = {
   },
 
   pricing: {
-    trialNote: 'This app offers 7 days of free trial.',
+    trialNote: 'This app offers a 7-day free trial.',
     plans: [
       {
-        name: 'Free Plan',
+        name: 'Free plan',
         price: 'Free',
         subtext: 'Free for sub-accounts',
         features: [
-          '1 Sub-Account',
-          'Unlimited Social Campaigns',
-          'Unlimited Ad Creatives',
-          'AI UGC Avatars',
-          'Advanced Editor'
+          '1 sub-account',
+          'Unlimited social campaigns',
+          'Unlimited ad creatives',
+          'AI UGC avatars',
+          'Advanced editor'
         ],
         highlighted: false
       },
       {
-        name: 'White-label Basic',
+        name: 'White-label basic',
         price: '$197',
         period: '/ month',
         subtext: 'Free for sub-accounts',
         features: [
-          'Unlimited Sub-Accounts',
-          'Unlimited Social Campaigns',
-          'Unlimited Ad Creatives',
-          'AI UGC Avatars',
-          'Advanced Editor'
+          'Unlimited sub-accounts',
+          'Unlimited social campaigns',
+          'Unlimited ad creatives',
+          'AI UGC avatars',
+          'Advanced editor'
         ],
         highlighted: false
       },
       {
-        name: 'White-label Pro',
+        name: 'White-label pro',
         price: '$197',
         period: '/ month',
-        subtextMonthly: '$5 / month / sub-account',
-        subtextYearly: '$60 / year / sub-account',
+        subtextMonthly: '$5 / month per sub-account',
+        subtextYearly: '$60 / year per sub-account',
         features: [
-          'Unlimited Sub-Accounts',
-          'Unlimited Social Campaigns',
-          'Unlimited Ad Creatives',
-          'AI UGC Avatars',
-          'Advanced Editor + Unlimited Storyblock...'
+          'Unlimited sub-accounts',
+          'Unlimited social campaigns',
+          'Unlimited ad creatives',
+          'AI UGC avatars',
+          'Advanced editor + unlimited Storyblock...'
         ],
         highlighted: false
       },
       {
-        name: 'Growth Plan',
+        name: 'Growth plan',
         price: '$397',
         period: '/ month',
         subtext: 'For growing teams',
         features: [
-          'Unlimited Sub-Accounts',
-          'Unlimited Social Campaigns',
-          'Priority Support',
-          'Advanced Analytics',
-          'Custom Integrations'
+          'Unlimited sub-accounts',
+          'Unlimited social campaigns',
+          'Priority support',
+          'Advanced analytics',
+          'Custom integrations'
         ],
         highlighted: false
       },
       {
-        name: 'Scale Plan',
+        name: 'Scale plan',
         price: '$597',
         period: '/ month',
         subtext: 'For scaling businesses',
         features: [
           'Everything in Growth',
-          'Dedicated Account Manager',
-          'Custom Workflows',
-          'API Access',
-          'White-label Solution'
+          'Dedicated account manager',
+          'Custom workflows',
+          'API access',
+          'White-label solution'
         ],
         highlighted: true
       },
       {
-        name: 'Enterprise Plan',
+        name: 'Enterprise plan',
         price: 'Custom',
         period: '/ month',
         subtext: 'Contact sales for pricing',
         features: [
           'Everything in Scale',
-          'Custom Development',
-          'SLA Guarantee',
-          'On-premise Deployment',
-          '24/7 Priority Support'
+          'Custom development',
+          'SLA guarantee',
+          'On-premise deployment',
+          '24/7 priority support'
         ],
         highlighted: false
       },
@@ -208,12 +238,12 @@ export const appData = {
         highlighted: false
       },
       {
-        name: 'Agency Plan',
+        name: 'Agency plan',
         price: '$1,297',
         period: '/ month',
         subtext: 'For agencies',
         features: [
-          'Unlimited Sub-Accounts',
+          'Unlimited sub-accounts',
           'Multi-user collaboration',
           'Agency dashboard',
           'White-label options',
@@ -223,13 +253,13 @@ export const appData = {
       }
     ],
     usageBased: [
-      { price: '$0.15 per second', label: 'AI UGC Avatar Video' },
-      { price: '$0.03 per image', label: 'Templated Image Generation' },
-      { price: '$0.05 per brand...', label: 'Brand Enrichment' },
-      { price: '$0.012 per second', label: 'Standard Video Template...' },
-      { price: '$0.026 per second', label: 'HD Video Template (1080p)' },
-      { price: '$0.2 per image', label: 'AI Image Generation' },
-      { price: '$0.4 per image', label: 'New AI Avatar Generation' },
+      { price: '$0.15 per second', label: 'AI UGC avatar video' },
+      { price: '$0.03 per image', label: 'Templated image generation' },
+      { price: '$0.05 per brand...', label: 'Brand enrichment' },
+      { price: '$0.012 per second', label: 'Standard video template...' },
+      { price: '$0.026 per second', label: 'HD video template (1080p)' },
+      { price: '$0.2 per image', label: 'AI image generation' },
+      { price: '$0.4 per image', label: 'New AI avatar generation' },
       { price: '$0.3 per second', label: 'Sora 2 Pro' },
       { price: '$0.15 per second', label: 'Veo 3.1 Fast' }
     ]
@@ -237,281 +267,421 @@ export const appData = {
 
   permissions: [
     {
-      name: 'Businesses',
-      icon: 'briefcase',
-      description: 'View and manage business information and settings.',
-      children: [
-        { access: 'Read', description: 'View business details and information' },
-        { access: 'Write', description: 'Create, update, and modify business records' }
-      ]
-    },
-    {
-      name: 'Companies',
-      icon: 'building',
+      name: 'Companies', icon: 'building',
       description: 'Access company data and organizational information.',
       children: [
-        { access: 'Read', description: 'View company details and profiles' },
-        { access: 'Write', description: 'Create and modify company records' }
+        { name: 'Companies', description: 'Companies will read.' }
       ]
     },
     {
-      name: 'Calendars',
-      icon: 'calendar',
-      description: 'Manage calendar events, schedules, and availability.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View calendar events and schedules' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify calendar events' },
-        { name: 'Events - Read', access: 'Read', description: 'View event details and information' },
-        { name: 'Events - Write', access: 'Write', description: 'Create and update calendar events' },
-        { name: 'Groups - Read', access: 'Read', description: 'View calendar group information' },
-        { name: 'Groups - Write', access: 'Write', description: 'Manage calendar groups' },
-        { name: 'Resources - Read', access: 'Read', description: 'View calendar resources' },
-        { name: 'Resources - Write', access: 'Write', description: 'Manage calendar resources' }
-      ]
-    },
-    {
-      name: 'Campaigns',
-      icon: 'megaphone',
-      description: 'Access marketing campaign data and analytics.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View campaign details and performance metrics' }
-      ]
-    },
-    {
-      name: 'Conversations',
-      icon: 'messageCircle',
+      name: 'Conversations', icon: 'messageCircle',
       description: 'Manage messaging and communication with contacts.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View conversation history and messages' },
-        { name: 'Write Access', access: 'Write', description: 'Send and compose messages' },
-        { name: 'Messages - Read', access: 'Read', description: 'View message content and details' },
-        { name: 'Messages - Write', access: 'Write', description: 'Create and send messages' },
-        { name: 'Live Chat - Write', access: 'Write', description: 'Send live chat messages' },
-        { name: 'Reports - Read', access: 'Read', description: 'View communication reports and analytics' }
+        { name: 'Conversations', description: 'Conversations will read and write.' },
+        { name: 'Message',       description: 'Message will read and write.' },
+        { name: 'Reports',       description: 'Reports will read.' },
+        { name: 'Livechat',      description: 'Livechat will write.' }
       ]
     },
     {
-      name: 'Contacts',
-      icon: 'users',
+      name: 'Contacts', icon: 'users',
       description: 'View and manage contact information and details.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View contact details, custom fields, and tags' },
-        { name: 'Write Access', access: 'Write', description: 'Create, update, and delete contact records' }
+        { name: 'Contacts', description: 'Contacts will read and write.' }
       ]
     },
     {
-      name: 'Forms',
-      icon: 'fileText',
+      name: 'Forms', icon: 'fileText',
       description: 'Create and manage forms for lead capture.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View form details and submissions' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify forms' }
+        { name: 'Forms', description: 'Forms will read and write.' }
       ]
     },
     {
-      name: 'Invoices',
-      icon: 'file',
-      description: 'Manage invoicing and billing information.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View invoice details and history' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify invoices' },
-        { name: 'Schedule - Read', access: 'Read', description: 'View invoice schedules' },
-        { name: 'Schedule - Write', access: 'Write', description: 'Create and modify invoice schedules' },
-        { name: 'Templates - Read', access: 'Read', description: 'View invoice templates' },
-        { name: 'Templates - Write', access: 'Write', description: 'Create and modify invoice templates' }
-      ]
-    },
-    {
-      name: 'Links',
-      icon: 'link',
-      description: 'Manage tracking links and URL tracking.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View link details and tracking data' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify tracking links' }
-      ]
-    },
-    {
-      name: 'Locations',
-      icon: 'mapPin',
+      name: 'Locations', icon: 'mapPin',
       description: 'Manage business locations and location data.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View location information' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify locations' },
-        { name: 'Custom Values - Read', access: 'Read', description: 'View custom location values' },
-        { name: 'Custom Values - Write', access: 'Write', description: 'Manage custom location values' },
-        { name: 'Custom Fields - Read', access: 'Read', description: 'View custom location fields' },
-        { name: 'Custom Fields - Write', access: 'Write', description: 'Create and modify custom fields' },
-        { name: 'Tasks - Read', access: 'Read', description: 'View location tasks' },
-        { name: 'Tasks - Write', access: 'Write', description: 'Create and modify location tasks' },
-        { name: 'Tags - Read', access: 'Read', description: 'View location tags' },
-        { name: 'Tags - Write', access: 'Write', description: 'Add and manage location tags' },
-        { name: 'Templates - Read', access: 'Read', description: 'View location templates' }
+        { name: 'CustomValues',  description: 'Customvalues will read and write.' },
+        { name: 'CustomFields',  description: 'Customfields will read and write.' },
+        { name: 'Locations',     description: 'Locations will read and write.' },
+        { name: 'Tags',          description: 'Tags will write and read.' },
+        { name: 'Templates',     description: 'Templates will read.' },
+        { name: 'Tasks',         description: 'Tasks will read and write.' }
       ]
     },
     {
-      name: 'Media',
-      icon: 'image',
+      name: 'Media', icon: 'image',
       description: 'Manage media files and assets.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View media files and assets' },
-        { name: 'Write Access', access: 'Write', description: 'Upload and modify media files' }
+        { name: 'Media', description: 'Media will read and write.' }
       ]
     },
     {
-      name: 'Opportunities',
-      icon: 'target',
-      description: 'Create and manage sales opportunities and pipelines.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View opportunities across pipelines' },
-        { name: 'Write Access', access: 'Write', description: 'Create, update, and delete opportunities' }
-      ]
-    },
-    {
-      name: 'Products',
-      icon: 'box',
-      description: 'Manage product catalog and pricing.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View product information' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify products' }
-      ]
-    },
-    {
-      name: 'SaaS',
-      icon: 'cloud',
-      description: 'Manage SaaS application integration data.',
-      children: [
-        { name: 'Company - Read', access: 'Read', description: 'View SaaS company data' },
-        { name: 'Company - Write', access: 'Write', description: 'Modify SaaS company information' },
-        { name: 'Location - Read', access: 'Read', description: 'View SaaS location data' },
-        { name: 'Location - Write', access: 'Write', description: 'Modify SaaS location information' }
-      ]
-    },
-    {
-      name: 'Surveys',
-      icon: 'checkCircle',
-      description: 'Create and distribute surveys.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View survey details and responses' }
-      ]
-    },
-    {
-      name: 'Users',
-      icon: 'user',
-      description: 'Manage user accounts and permissions.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View user information and accounts' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify user accounts' }
-      ]
-    },
-    {
-      name: 'Workflows',
-      icon: 'workflow',
-      description: 'View and manage automation workflows.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View workflows and execution history' }
-      ]
-    },
-    {
-      name: 'Snapshots',
-      icon: 'camera',
-      description: 'Manage data snapshots and backups.',
-      children: [
-        { name: 'Read Access', access: 'Read', description: 'View snapshots and backup information' },
-        { name: 'Write Access', access: 'Write', description: 'Create and manage snapshots' }
-      ]
-    },
-    {
-      name: 'OAuth',
-      icon: 'lock',
+      name: 'OAuth', icon: 'lock',
       description: 'Manage OAuth authentication and security.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View OAuth credentials and settings' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify OAuth tokens' }
+        { name: 'OAuth', description: 'OAuth will write and read.' }
       ]
     },
     {
-      name: 'Objects',
-      icon: 'grid',
-      description: 'Manage custom objects and data schemas.',
+      name: 'Opportunities', icon: 'target',
+      description: 'Create and manage sales opportunities and pipelines.',
       children: [
-        { name: 'Schema - Read', access: 'Read', description: 'View object schema definitions' },
-        { name: 'Schema - Write', access: 'Write', description: 'Create and modify object schemas' },
-        { name: 'Records - Read', access: 'Read', description: 'View object records' },
-        { name: 'Records - Write', access: 'Write', description: 'Create and modify object records' }
+        { name: 'Opportunities', description: 'Opportunities will read and write.' }
       ]
     },
     {
-      name: 'Associations',
-      icon: 'link2',
-      description: 'Manage relationships between records.',
+      name: 'Payments', icon: 'creditCard',
+      description: 'Manage payments, orders, and transactions.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View record associations' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify record associations' },
-        { name: 'Relations - Read', access: 'Read', description: 'View relationship definitions' },
-        { name: 'Relations - Write', access: 'Write', description: 'Create and modify relationships' }
+        { name: 'Orders',          description: 'Orders will read and write.' },
+        { name: 'Integration',     description: 'Integration will read and write.' },
+        { name: 'Transactions',    description: 'Transactions will read.' },
+        { name: 'Subscriptions',   description: 'Subscriptions will read.' },
+        { name: 'Coupons',         description: 'Coupons will read and write.' },
+        { name: 'Custom-provider', description: 'Custom-provider will read and write.' }
       ]
     },
     {
-      name: 'LC Email',
-      icon: 'mail',
-      description: 'Manage email communications.',
+      name: 'Products', icon: 'box',
+      description: 'Manage product catalog and pricing.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View email messages and history' }
+        { name: 'Products',   description: 'Products will read and write.' },
+        { name: 'Prices',     description: 'Prices will read and write.' },
+        { name: 'Collection', description: 'Collection will read and write.' }
       ]
     },
     {
-      name: 'Custom Menu Link',
-      icon: 'menu',
+      name: 'Snapshots', icon: 'camera',
+      description: 'Manage data snapshots and backups.',
+      children: [
+        { name: 'Snapshots', description: 'Snapshots will read and write.' }
+      ]
+    },
+    {
+      name: 'Store', icon: 'shoppingBag',
+      description: 'Manage store configuration and shipping.',
+      children: [
+        { name: 'Shipping', description: 'Shipping will read and write.' },
+        { name: 'Setting',  description: 'Setting will read and write.' }
+      ]
+    },
+    {
+      name: 'Users', icon: 'user',
+      description: 'Manage user accounts and permissions.',
+      children: [
+        { name: 'Users', description: 'Users will read and write.' }
+      ]
+    },
+    {
+      name: 'Workflows', icon: 'workflow',
+      description: 'View and manage automation workflows.',
+      children: [
+        { name: 'Workflows', description: 'Workflows will read.' }
+      ]
+    },
+    {
+      name: 'Custom Menu Link', icon: 'menu',
       description: 'Create custom navigation links.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View custom menu links' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify menu links' }
+        { name: 'Custom Menu Link', description: 'Custom Menu Link will read and write.' }
       ]
     },
     {
-      name: 'Knowledge Bases',
-      icon: 'bookOpen',
-      description: 'Manage knowledge base articles.',
+      name: 'Calendars', icon: 'calendar',
+      description: 'Manage calendar events, schedules, and availability.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View knowledge base content' },
-        { name: 'Write Access', access: 'Write', description: 'Create and modify articles' }
+        { name: 'Calendars', description: 'Calendars will write and read.' },
+        { name: 'Events',    description: 'Events will read and write.' },
+        { name: 'Groups',    description: 'Groups will read and write.' },
+        { name: 'Resources', description: 'Resources will read and write.' }
       ]
     },
     {
-      name: 'Blogs',
-      icon: 'newspaper',
-      description: 'Manage blog posts and content.',
+      name: 'Charges', icon: 'dollarSign',
+      description: 'Manage charges and billing.',
       children: [
-        { name: 'Posts - Write', access: 'Write', description: 'Create new blog posts' },
-        { name: 'Posts - Update Write', access: 'Write', description: 'Update existing blog posts' },
-        { name: 'Check Slug - Read', access: 'Read', description: 'View and validate post slugs' },
-        { name: 'Categories - Read', access: 'Read', description: 'View post categories' },
-        { name: 'Authors - Read', access: 'Read', description: 'View author information' },
-        { name: 'Posts - Read', access: 'Read', description: 'View published blog posts' },
-        { name: 'List - Read', access: 'Read', description: 'View post listings' }
+        { name: 'Charges', description: 'Charges will read and write.' }
       ]
     },
     {
-      name: 'Marketplace Installer Details',
-      icon: 'package',
+      name: 'Marketplace Installer Details', icon: 'package',
       description: 'View app installation and usage data.',
       children: [
-        { name: 'Read Access', access: 'Read', description: 'View app installation details' }
+        { name: 'Marketplace Installer Details', description: 'Marketplace Installer Details will read.' }
+      ]
+    },
+    {
+      name: 'Emails', icon: 'mail',
+      description: 'Manage email campaigns and schedules.',
+      children: [
+        { name: 'Builder',  description: 'Builder will read and write.' },
+        { name: 'Schedule', description: 'Schedule will read and write.' }
+      ]
+    },
+    {
+      name: 'Businesses', icon: 'briefcase',
+      description: 'View and manage business information and settings.',
+      children: [
+        { name: 'Businesses', description: 'Businesses will read and write.' }
+      ]
+    },
+    {
+      name: 'Campaigns', icon: 'megaphone',
+      description: 'Access marketing campaign data and analytics.',
+      children: [
+        { name: 'Campaigns', description: 'Campaigns will read.' }
+      ]
+    },
+    {
+      name: 'Social Planner', icon: 'share2',
+      description: 'Manage social media posts and scheduling.',
+      children: [
+        { name: 'Tag',        description: 'Tag will read and write.' },
+        { name: 'Oauth',      description: 'Oauth will read and write.' },
+        { name: 'Post',       description: 'Post will read and write.' },
+        { name: 'Account',    description: 'Account will read and write.' },
+        { name: 'Csv',        description: 'Csv will read and write.' },
+        { name: 'Category',   description: 'Category will read and write.' },
+        { name: 'Statistics', description: 'Statistics will read.' }
+      ]
+    },
+    {
+      name: 'Objects', icon: 'grid',
+      description: 'Manage custom objects and data schemas.',
+      children: [
+        { name: 'Schema', description: 'Schema will read and write.' },
+        { name: 'Record', description: 'Record will read and write.' }
+      ]
+    },
+    {
+      name: 'Associations', icon: 'link2',
+      description: 'Manage relationships between records.',
+      children: [
+        { name: 'Associations', description: 'Associations will write and read.' },
+        { name: 'Relation',     description: 'Relation will read and write.' }
+      ]
+    },
+    {
+      name: 'SaaS', icon: 'cloud',
+      description: 'Manage SaaS application integration data.',
+      children: [
+        { name: 'Company',  description: 'Company will read and write.' },
+        { name: 'Location', description: 'Location will read and write.' }
+      ]
+    },
+    {
+      name: 'Invoices', icon: 'file',
+      description: 'Manage invoicing and billing information.',
+      children: [
+        { name: 'Invoices', description: 'Invoices will read and write.' },
+        { name: 'Schedule', description: 'Schedule will read and write.' },
+        { name: 'Template', description: 'Template will read and write.' },
+        { name: 'Estimate', description: 'Estimate will read and write.' }
+      ]
+    },
+    {
+      name: 'Affiliate Manager', icon: 'userPlus',
+      description: 'Manage affiliate relationships and tracking.',
+      children: [
+        { name: 'Affiliate Manager', description: 'Affiliate Manager will read.' }
+      ]
+    },
+    {
+      name: 'Agent Studio', icon: 'bot',
+      description: 'Build and configure AI agents.',
+      children: [
+        { name: 'Agent Studio', description: 'Agent Studio will read and write.' }
+      ]
+    },
+    {
+      name: 'Blogs', icon: 'newspaper',
+      description: 'Manage blog posts and content.',
+      children: [
+        { name: 'Post',        description: 'Post will write.' },
+        { name: 'Post-update', description: 'Post-update will write.' },
+        { name: 'Check-slug',  description: 'Check-slug will read.' },
+        { name: 'Category',    description: 'Category will read.' },
+        { name: 'Author',      description: 'Author will read.' },
+        { name: 'Posts',       description: 'Posts will read.' },
+        { name: 'List',        description: 'List will read.' }
+      ]
+    },
+    {
+      name: 'Brand Boards', icon: 'palette',
+      description: 'Manage brand assets and design kits.',
+      children: [
+        { name: 'Design-kit', description: 'Design-kit will read and write.' },
+        { name: 'Voices',     description: 'Voices will read and write.' }
+      ]
+    },
+    {
+      name: 'Conversation Ai', icon: 'messageSquare',
+      description: 'Manage Conversation AI settings and data.',
+      children: [
+        { name: 'Conversation Ai', description: 'Conversation Ai will read and write.' }
+      ]
+    },
+    {
+      name: 'Courses', icon: 'bookOpen',
+      description: 'Manage online courses and content.',
+      children: [
+        { name: 'Courses', description: 'Courses will write and read.' }
+      ]
+    },
+    {
+      name: 'Surveys', icon: 'checkCircle',
+      description: 'Create and distribute surveys.',
+      children: [
+        { name: 'Surveys', description: 'Surveys will read.' }
+      ]
+    },
+    {
+      name: 'Twilioaccount', icon: 'phone',
+      description: 'Access Twilio account data.',
+      children: [
+        { name: 'Twilioaccount', description: 'Twilioaccount will read.' }
+      ]
+    },
+    {
+      name: 'Voice Ai Dashboard', icon: 'barChart',
+      description: 'View Voice AI dashboard analytics.',
+      children: [
+        { name: 'Voice Ai Dashboard', description: 'Voice Ai Dashboard will read.' }
+      ]
+    },
+    {
+      name: 'Voice Ai Agents', icon: 'volume2',
+      description: 'Manage Voice AI agents.',
+      children: [
+        { name: 'Voice Ai Agents', description: 'Voice Ai Agents will read and write.' }
+      ]
+    },
+    {
+      name: 'Voice Ai Agent Goals', icon: 'target',
+      description: 'Manage Voice AI agent goals.',
+      children: [
+        { name: 'Voice Ai Agent Goals', description: 'Voice Ai Agent Goals will read and write.' }
+      ]
+    },
+    {
+      name: 'WordPress', icon: 'globe',
+      description: 'Access WordPress integration data.',
+      children: [
+        { name: 'WordPress', description: 'WordPress will read.' }
+      ]
+    },
+    {
+      name: 'Lc Email', icon: 'mail',
+      description: 'Manage LC email communications.',
+      children: [
+        { name: 'Lc Email', description: 'Lc Email will read.' }
+      ]
+    },
+    {
+      name: 'Links', icon: 'link',
+      description: 'Manage tracking links and URL tracking.',
+      children: [
+        { name: 'Links', description: 'Links will read and write.' }
+      ]
+    },
+    {
+      name: 'Recurring Tasks', icon: 'repeat',
+      description: 'Manage recurring tasks and schedules.',
+      children: [
+        { name: 'Recurring Tasks', description: 'Recurring Tasks will read and write.' }
+      ]
+    },
+    {
+      name: 'Marketplace External Auth Migration', icon: 'shield',
+      description: 'Manage external auth migrations.',
+      children: [
+        { name: 'Marketplace External Auth Migration', description: 'Marketplace External Auth Migration will write.' }
+      ]
+    },
+    {
+      name: 'Phonenumbers', icon: 'phone',
+      description: 'Manage phone numbers.',
+      children: [
+        { name: 'Phonenumbers', description: 'Phonenumbers will read and write.' }
+      ]
+    },
+    {
+      name: 'Numberpools', icon: 'hash',
+      description: 'View number pool data.',
+      children: [
+        { name: 'Numberpools', description: 'Numberpools will read.' }
+      ]
+    },
+    {
+      name: 'Documents_contracts', icon: 'fileText',
+      description: 'Manage document contracts.',
+      children: [
+        { name: 'List',     description: 'List will read.' },
+        { name: 'SendLink', description: 'SendLink will write.' }
+      ]
+    },
+    {
+      name: 'Documents_contracts_template', icon: 'fileText',
+      description: 'Manage document contract templates.',
+      children: [
+        { name: 'SendLink', description: 'SendLink will write.' },
+        { name: 'List',     description: 'List will read.' }
       ]
     }
   ],
 
+  aiTopics: {
+    pros: [
+      'easy setup',
+      'reliable SMS functionality',
+      'responsive customer support'
+    ],
+    cons: [
+      'Mac requirement for iOS compatibility',
+      'lack of free trial option'
+    ]
+  },
+
   reviews: [
+    {
+      name: 'Bright Roots Studio',
+      location: 'Canada',
+      duration: 'Over 2 years using the app',
+      rating: 5,
+      date: 'May 2, 2026',
+      topics: ['easy setup', 'responsive customer support'],
+      body: 'Honestly the easy setup blew me away — I had everything connected in under ten minutes and didn\'t need to call anyone. When I did have a question later about templates, their responsive customer support team got back to me the same day with screenshots. Couldn\'t ask for more.'
+    },
+    {
+      name: 'Northwind Plumbing',
+      location: 'United States',
+      duration: '1 year using the app',
+      rating: 5,
+      date: 'April 28, 2026',
+      topics: ['reliable SMS functionality', 'responsive customer support'],
+      body: 'We send hundreds of appointment reminders a week and the reliable SMS functionality just works — no missed sends, no delivery delays. The responsive customer support has been a huge bonus too whenever we onboard a new technician.'
+    },
+    {
+      name: 'Olive & Co Marketing',
+      location: 'Australia',
+      duration: '8 months using the app',
+      rating: 4,
+      date: 'April 15, 2026',
+      topics: ['easy setup', 'reliable SMS functionality'],
+      body: 'The easy setup got us live in an afternoon. The reliable SMS functionality has handled three campaigns now without issues. Docking a star only because the dashboard could use a refresh, but support promised it\'s on the roadmap.'
+    },
     {
       name: 'Bark & Beyond',
       location: 'United States',
       duration: 'Over 4 years using the app',
       rating: 2,
       date: 'April 21, 2026',
-      body: 'The app wont verify me, it just goes round in circles and it has been doing this for months, I was told i can\'t link because I am in a probation period as a new seller however I want to be able to bulk upload my items so I can sell them to be able to achieve all the targets to get our of probation.',
+      topics: ['Mac requirement for iOS compatibility'],
+      body: 'The Mac requirement for iOS compatibility is a real headache for our windows-only team. We genuinely wanted to use the mobile features but ended up parking that whole workflow because nobody on our staff has a Mac available.',
       response: {
         date: 'April 23, 2026',
-        text: 'Thank you for your feedback. We understand your frustration with the verification process. We\'ve reviewed your account and found a technical issue that was causing the circular verification loop. Our support team has manually verified your account, and you should now have bulk upload access. We apologize for the inconvenience and will be implementing improvements to prevent this issue in the future.'
+        text: 'Thanks for the honest feedback. We hear you on the Mac requirement for iOS compatibility — we\'re actively investigating a cloud build pipeline so Windows-only teams can publish iOS builds without a Mac. We\'ll update you when there\'s progress.'
       }
     },
     {
@@ -520,18 +690,20 @@ export const appData = {
       duration: 'Over 4 years using the app',
       rating: 1,
       date: 'February 21, 2026',
-      body: 'Legitimate UK registered company, trading since 2013. Account deactivated by a bot with zero explanation. Appeal rejected with a blank reason field. Funds frozen for 90 days. No human support available. Avoid until they fix their automated moderation system — it is destroying real businesses.'
+      topics: ['lack of free trial option'],
+      body: 'Wanted to evaluate this properly but the lack of free trial option meant we had to commit to a paid month just to find out it wasn\'t the right fit. A 14-day trial would have made this decision a lot easier.'
     },
     {
       name: 'Chacho\'s Kids',
       location: 'United States',
       duration: 'Over 1 year using the app',
-      rating: 1,
+      rating: 2,
       date: 'April 7, 2026',
-      body: 'I decided to remove all of my products from TikTok Shop through my Shopify admin due to the extremely poor support experience. It is nearly impossible to get help when issues arise. There is no phone support, the chat support does not work properly, and emails go unanswered.',
+      topics: ['lack of free trial option', 'Mac requirement for iOS compatibility'],
+      body: 'Two things held us back: the lack of free trial option, which meant our finance team was hesitant to approve a yearly contract, and the Mac requirement for iOS compatibility which surprised us mid-project. Otherwise the core product seems solid.',
       response: {
         date: 'April 9, 2026',
-        text: 'We\'re sorry to hear about your experience. We take support quality very seriously and your feedback highlights areas we need to improve. We\'ve escalated your case to our support manager. Our team is now available via chat 24/7 and we\'re expanding our phone support hours. Please reach out directly to support@resourcecentre.app and we\'ll prioritize your case.'
+        text: 'Appreciate you laying that out clearly. We\'re piloting a 7-day trial program next quarter — happy to add you to the early access list if you\'d like.'
       }
     }
   ]

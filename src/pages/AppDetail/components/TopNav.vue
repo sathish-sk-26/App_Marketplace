@@ -11,7 +11,7 @@
       <nav class="primary-nav" aria-label="Primary">
         <a href="#" class="nav-link">App dashboard</a>
         <button @click="router.push('/marketplace/apps/resource-centre')" class="nav-link">My apps</button>
-        <button @click="router.push('/marketplace/ai-agents/E.D.I.D.H')" class="nav-link">AI Agents</button>
+        <button @click="router.push('/marketplace/ai-agents/E.D.I.D.H')" class="nav-link">AI agents</button>
         <a href="#" class="nav-link has-dot">
           Product updates
           <span class="dot" aria-label="new updates" />

@@ -1,6 +1,6 @@
 <template>
   <div class="get-started">
-    <h2 class="page-title">Lets get it setup for you!</h2>
+    <h2 class="page-title">Let's get it set up for you</h2>
 
     <button class="video-card" @click="playing = true" aria-label="Play getting started video">
       <template v-if="!playing">
@@ -27,11 +27,20 @@
 
     <div class="link-grid">
       <a v-for="link in links" :key="link.title" href="#" class="link-card" @click.prevent>
-        <div class="link-head">
-          <span class="link-title">{{ link.title }}</span>
-          <Icon name="chevronRight" :size="16" class="link-arrow" />
+        <div class="link-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 17" fill="none" style="margin-bottom: 12px;">
+            <path d="M11.6667 0H1.66667C0.75 0 0 0.75 0 1.66667V15C0 15.9167 0.75 16.6667 1.66667 16.6667H11.6667C12.5833 16.6667 13.3333 15.9167 13.3333 15V1.66667C13.3333 0.75 12.5833 0 11.6667 0ZM4.16667 1.66667H5.83333V5.83333L5 5.20833L4.16667 5.83333V1.66667ZM11.6667 15H1.66667V1.66667H2.5V9.16667L5 7.29167L7.5 9.16667V1.66667H11.6667V15Z" fill="var(--color-neutral-gray-500, #667085)"/>
+          </svg>
         </div>
+        <h3 class="link-title">{{ link.title }}</h3>
         <p class="link-desc">{{ link.description }}</p>
+        <div class="link-cta">
+          <div class="link-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.244078 0.244078C0.569515 -0.0813593 1.09715 -0.0813593 1.42259 0.244078L6.42259 5.24408C6.74803 5.56951 6.74803 6.09715 6.42259 6.42259L1.42259 11.4226C1.09715 11.748 0.569515 11.748 0.244078 11.4226C-0.0813592 11.0972 -0.0813592 10.5695 0.244078 10.2441L4.65482 5.83333L0.244078 1.42259C-0.0813592 1.09715 -0.0813592 0.569515 0.244078 0.244078Z" fill="#475467"/>
+            </svg>
+          </div>
+        </div>
       </a>
     </div>
   </div>
@@ -44,7 +53,7 @@ import Icon from '@/components/Icon.vue'
 const props = defineProps({ app: { type: Object, required: true } })
 
 const playing = ref(false)
-const providerName = computed(() => props.app.externalProvider || 'Jobber Leadconnector')
+const providerName = computed(() => props.app.externalProvider || props.app.name)
 const videoPoster = computed(() =>
   props.app.media?.video?.poster ||
   'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=80'
@@ -55,15 +64,15 @@ const videoUrl = computed(() =>
 
 const links = [
   {
-    title: 'Configure Review Settings',
+    title: 'Configure review settings',
     description: 'Connect and manage reviews from Google, Facebook, Yelp, and 40+ platforms in one place.'
   },
   {
-    title: 'Configure Voice AI Agent',
-    description: 'Setup VoiceAI Agents to answer calls, transcribe, summarize, and trigger the next pre configured workflow on auto-pilot.'
+    title: 'Configure Voice AI agent',
+    description: 'Set up Voice AI agents to answer calls, transcribe, summarize, and trigger the next pre-configured workflow on auto-pilot.'
   },
   {
-    title: 'Review Workflows',
+    title: 'Review workflows',
     description: 'Capture leads, nurture relationships, and close more sales with less manual work.'
   }
 ]
@@ -149,7 +158,7 @@ const links = [
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 18px 20px;
+  padding: 20px;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -157,25 +166,51 @@ const links = [
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .link-card:hover {
-  border-color: var(--primary-300, var(--primary-500));
-  box-shadow: var(--shadow-sm);
+  border-color: var(--gray-300);
+  background: var(--gray-50);
+  transform: translateY(-2px);
 }
-.link-head {
+.link-icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  color: var(--primary-600);
-  font-size: var(--hr-text-md);
-  font-weight: 600;
+  justify-content: left;
 }
-.link-arrow { color: var(--primary-600); }
+.link-badge {
+  font-size: var(--hr-text-xs);
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.link-title {
+  margin: 0;
+  font-size: var(--hr-text-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  text-align: left;
+}
 .link-desc {
   margin: 0;
   font-size: var(--hr-text-sm);
-  color: var(--gray-700);
+  color: var(--gray-600);
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
+  flex-grow: 1;
+}
+.link-cta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+.link-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {

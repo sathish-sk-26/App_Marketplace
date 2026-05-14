@@ -5,7 +5,7 @@
 
     <!-- 2. Hero app header — full size, shown before scroll -->
     <div ref="heroEl" class="container">
-      <AppHeader :app="appData" />
+      <AppHeader :app="appData" :hide-create-account="true" />
     </div>
 
     <!-- 3. Sticky compact header — appears after scroll passes hero -->
@@ -59,7 +59,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import { appData } from '@/pages/AppDetail/data.js'
+import { aiAgentData as appData } from './aiAgentData.js'
 
 import TopNav     from '@/pages/AppDetail/components/TopNav.vue'
 import AppHeader  from '@/pages/AppDetail/components/AppHeader.vue'
@@ -80,7 +80,7 @@ const tabs = [
   { id: 'permissions',        label: 'Permissions' },
   { id: 'reviews',            label: 'Reviews', count: appData.reviewCount },
   { id: 'getStarted',         label: 'Get started' },
-  { id: 'externalConnection', label: 'External Connection' },
+  { id: 'externalConnection', label: 'External connection' },
 ]
 
 const activeTab = ref('overview')
