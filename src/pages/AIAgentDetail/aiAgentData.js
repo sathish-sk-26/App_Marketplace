@@ -3,7 +3,7 @@ export const aiAgentData = {
   name: 'AI Sales Assistant',
   verified: true,
   isAIAgent: true,
-  tagline: 'Scale Your Business with AI Sales Agent.',
+  tagline: 'Scale your business with AI Sales Agent.',
   developer: 'AI Agency',
   iconLetter: 'A',
   iconBg: '#155EEF',
@@ -36,7 +36,7 @@ export const aiAgentData = {
 
   about: {
     description:
-      '<h2>AI Sales Agent — Use Cases &amp; Features for All Business Types</h2><h4>1. Use Cases</h4><p>This AI Sales Agent can be deployed across any type of business, automating sales, lead qualification, and follow-up with natural, conversational voice interactions.</p><p><strong>Examples of Use Cases Across Niches:</strong><br><strong>SaaS &amp; Software Companies:</strong> Automate demo bookings, capture leads, qualify prospects, and send payment links.<br><strong>Coaching &amp; Consulting:</strong> Book strategy sessions, qualify client needs, provide answers to common questions, and send follow-ups.<br><strong>E-Commerce &amp; Retail:</strong> Answer product questions, capture orders, confirm payments, and provide shipping updates.<br><strong>Marketing &amp; Service Providers:</strong> Qualify potential clients, book consultation calls, and present service offerings.<br><strong>Professional Services (Legal, Accounting, etc.):</strong> Capture client details, schedule appointments, answer FAQs, and share relevant information.<br><strong>Healthcare &amp; Wellness Providers:</strong> Book appointments, provide service information, and answer common patient queries.<br><strong>Any B2B or B2C Business:</strong> Fully adaptable to industry-specific offers, goals, and workflows.<br><strong>Key Benefit Across Use Cases:</strong><br><strong>Dynamic Setup:</strong> Just fill out one simple form with your business name, offers, and key details — these are automatically used to customize the AI\'s prompts, responses, and conversation flow.<br><strong>Fast Deployment:</strong> The AI Sales Agent is trained and ready to go in under 60 seconds.</p><h4>2. Features</h4><p>The AI Sales Agent includes these core features:</p><p><strong>Structured Sales Flow</strong><br>Captures accurate contact details first (name, email, phone)<br>Greets prospects and qualifies their goals, challenges, and urgency<br>Answers FAQs and redirects unknown questions<br>Presents offers and guarantees persuasively<br>Handles objections and re-engages if necessary<br>Books appointments for follow-up<br>Concludes calls professionally and warmly</p><p><strong>Customizable Experience</strong><br>Branded with your business name<br>Conversation tone, voice, and scripts are automatically personalized using your form inputs<br>Reads numbers and prices clearly for natural speech</p><p><strong>Integrated Workflows</strong><br><strong>Appointment Booking &amp; Follow-Up:</strong> Confirms sessions via email/SMS, sends reminders and prep materials, and automatically tags contacts in your CRM for tracking.<br><strong>Payment Confirmation:</strong> Sends secure payment links, confirms successful payments, updates records, and applies the correct CRM tags for reporting and automation.<br><strong>AI Knowledge &amp; Training:</strong> Continuously improves qualification, objection handling, and responses over time.</p><p><strong>Adaptable to Any Business Type</strong><br>Works for SaaS, coaching, retail, professional services, healthcare, and more<br>Customizable to match your products, offers, and services<br>Optimized to convert leads and book appointments automatically</p><p><strong>Fallback &amp; Unknown Question Handling</strong><br>Provides professional, general responses to off-topic questions<br>Redirects conversations back to your offers and goals</p><p><strong>Analytics &amp; Optimization</strong><br>Tracks leads, conversions, and interactions<br>Provides insights for improving performance and results</p><h4>3. Quick &amp; Simple Setup</h4><p>Simply fill out one form, and all your details — business name, offer, pricing, FAQs — are dynamically added to the AI\'s prompt. No technical expertise needed. Your AI agent is ready to engage prospects in less than 60 seconds, automatically tagging contacts in your CRM for smooth follow-up and reporting.</p>',
+      '<h2>AI Sales Agent — Use cases and features for all business types</h2><h4>1. Use cases</h4><p>This AI Sales Agent can be deployed across any type of business, automating sales, lead qualification, and follow-up with natural, conversational voice interactions.</p><p><strong>Examples of use cases across niches:</strong><br><strong>SaaS and software companies:</strong> Automate demo bookings, capture leads, qualify prospects, and send payment links.<br><strong>Coaching and consulting:</strong> Book strategy sessions, qualify client needs, provide answers to common questions, and send follow-ups.<br><strong>E-commerce and retail:</strong> Answer product questions, capture orders, confirm payments, and provide shipping updates.<br><strong>Marketing and service providers:</strong> Qualify potential clients, book consultation calls, and present service offerings.<br><strong>Professional services (legal, accounting, etc.):</strong> Capture client details, schedule appointments, answer FAQs, and share relevant information.<br><strong>Healthcare and wellness providers:</strong> Book appointments, provide service information, and answer common patient queries.<br><strong>Any B2B or B2C business:</strong> Fully adaptable to industry-specific offers, goals, and workflows.<br><strong>Key benefit across use cases:</strong><br><strong>Dynamic setup:</strong> Just fill out one simple form with your business name, offers, and key details — these are automatically used to customize the AI\'s prompts, responses, and conversation flow.<br><strong>Fast deployment:</strong> The AI Sales Agent is trained and ready to go in under 60 seconds.</p><h4>2. Features</h4><p>The AI Sales Agent includes these core features:</p><p><strong>Structured sales flow</strong><br>Captures accurate contact details first (name, email, phone)<br>Greets prospects and qualifies their goals, challenges, and urgency<br>Answers FAQs and redirects unknown questions<br>Presents offers and guarantees persuasively<br>Handles objections and re-engages if necessary<br>Books appointments for follow-up<br>Concludes calls professionally and warmly</p><p><strong>Customizable experience</strong><br>Branded with your business name<br>Conversation tone, voice, and scripts are automatically personalized using your form inputs<br>Reads numbers and prices clearly for natural speech</p><p><strong>Integrated workflows</strong><br><strong>Appointment booking and follow-up:</strong> Confirms sessions via email/SMS, sends reminders and prep materials, and automatically tags contacts in your CRM for tracking.<br><strong>Payment confirmation:</strong> Sends secure payment links, confirms successful payments, updates records, and applies the correct CRM tags for reporting and automation.<br><strong>AI knowledge and training:</strong> Continuously improves qualification, objection handling, and responses over time.</p><p><strong>Adaptable to any business type</strong><br>Works for SaaS, coaching, retail, professional services, healthcare, and more<br>Customizable to match your products, offers, and services<br>Optimized to convert leads and book appointments automatically</p><p><strong>Fallback and unknown question handling</strong><br>Provides professional, general responses to off-topic questions<br>Redirects conversations back to your offers and goals</p><p><strong>Analytics and optimization</strong><br>Tracks leads, conversions, and interactions<br>Provides insights for improving performance and results</p><h4>3. Quick and simple setup</h4><p>Simply fill out one form, and all your details — business name, offer, pricing, FAQs — are dynamically added to the AI\'s prompt. No technical expertise needed. Your AI agent is ready to engage prospects in less than 60 seconds, automatically tagging contacts in your CRM for smooth follow-up and reporting.</p>',
     bullets: [],
     tags: []
   },
@@ -63,15 +63,15 @@ export const aiAgentData = {
     ],
     customJs: [],
     customActions: [
-      { name: 'Book Appointment', description: 'Automatically book appointments with qualified leads.', icon: 'calendar' },
-      { name: 'Send Payment Link', description: 'Send a secure payment link to the contact.', icon: 'creditCard' },
-      { name: 'Human Handover', description: 'Transfer the conversation to a human agent.', icon: 'user' },
-      { name: 'Stop Bot', description: 'Stop the AI bot for this contact.', icon: 'x' },
+      { name: 'Book appointment', description: 'Automatically book appointments with qualified leads.', icon: 'calendar' },
+      { name: 'Send payment link', description: 'Send a secure payment link to the contact.', icon: 'creditCard' },
+      { name: 'Human handover', description: 'Transfer the conversation to a human agent.', icon: 'user' },
+      { name: 'Stop bot', description: 'Stop the AI bot for this contact.', icon: 'x' },
     ],
     customActionsExtra: 0,
     customTriggers: [
-      { name: 'Appointment Booked', description: 'Triggers when an appointment is successfully booked.', icon: 'calendar' },
-      { name: 'Payment Received', description: 'Triggers when a payment is confirmed.', icon: 'creditCard' },
+      { name: 'Appointment booked', description: 'Triggers when an appointment is successfully booked.', icon: 'calendar' },
+      { name: 'Payment received', description: 'Triggers when a payment is confirmed.', icon: 'creditCard' },
     ],
     customTriggersExtra: 0,
     snapshots: [{ name: 'AI Sales Assistant snapshot', icon: 'eye' }],
@@ -99,25 +99,25 @@ export const aiAgentData = {
     supportEmail: 'kazimabbas103@gmail.com',
     documentationUrl: 'https://gamma.app/docs/Unloc...',
     supportWebsiteUrl: 'https://linkedin.com/in/kazima...',
-    supportPhone: '+923033671110'
+    supportPhone: '+92 (303) 367-1110'
   },
 
   appDetails: {
-    categories: ['Sales Enablement', 'Calling', 'Virtual Assistants'],
-    businessNiche: ['SaaS', 'Coaching', 'Professional Services'],
+    categories: ['Sales enablement', 'Calling', 'Virtual assistants'],
+    businessNiche: ['SaaS', 'Coaching', 'Professional services'],
     version: '1.1.0',
     updated: 'May 2026',
     developer: 'AI Agency'
   },
 
   sidebar: {
-    categories: ['AI & Automation'],
-    type: 'Marketplace App',
+    categories: ['AI & automation'],
+    type: 'Marketplace app',
     resources: [
       { name: 'Support',        icon: 'support',  href: '#' },
       { name: 'Documentation',  icon: 'docs',     href: '#' },
       { name: 'Terms',          icon: 'terms',    href: '#' },
-      { name: 'Privacy Policy', icon: 'privacy',  href: '#' },
+      { name: 'Privacy policy', icon: 'privacy',  href: '#' },
       { name: 'Website',        icon: 'globe',    href: '#' }
     ]
   },
@@ -197,10 +197,10 @@ export const aiAgentData = {
       ]
     },
     {
-      name: 'Conversation Ai', icon: 'messageSquare',
+      name: 'Conversation AI', icon: 'messageSquare',
       description: 'Manage Conversation AI settings and data.',
       children: [
-        { name: 'Conversation Ai', description: 'Conversation Ai will read and write.' }
+        { name: 'Conversation AI', description: 'Conversation AI will read and write.' }
       ]
     },
     {

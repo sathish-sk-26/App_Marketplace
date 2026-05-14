@@ -4,7 +4,7 @@
       <div>
         <h2 class="section-title">Permission</h2>
         <p class="lead">
-          Learn about what this App can do in your account
+          Learn about what this app can do in your account
         </p>
       </div>
       <div class="variation-switch" role="tablist" aria-label="Permissions view">
@@ -114,7 +114,7 @@ function toggleCard(index) {
 const variations = [
   { id: 'accordion', label: 'Accordion' },
   { id: 'cards',     label: 'Cards' },
-  { id: 'cardsGrid', label: 'Cards (Grid)' },
+  { id: 'cardsGrid', label: 'Cards (grid)' },
   { id: 'list',      label: 'List' }
 ]
 

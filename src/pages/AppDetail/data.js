@@ -1,8 +1,8 @@
 export const appData = {
   id: 'resource-centre',
-  name: 'Resource Centre',
+  name: 'Resource Center',
   verified: true,
-  tagline: 'Centralise your knowledge, empower your team.',
+  tagline: 'Centralize your knowledge, empower your team.',
   developer: 'HighLevel',
   iconLetter: 'R',
   iconBg: '#7839EE',
@@ -22,7 +22,7 @@ export const appData = {
 
   media: {
     video: {
-      title: 'Resource Centre platform product tour and demo',
+      title: 'Resource Center platform product tour and demo',
       poster: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
       url: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     },
@@ -35,7 +35,7 @@ export const appData = {
 
   about: {
     description:
-      '<h2>Resource Centre</h2><p>Resource Centre is a marketplace app that helps businesses increase user engagement via messages in a CRM application. Centralise your knowledge base, training materials, and support documentation so your team always has what they need at their fingertips.</p><p><strong>Key Features:</strong><br>Centralised document and media library<br>Role-based access for agency and sub-accounts<br>Instant search across all resources<br>Embeddable help widgets for any page<br>Version history and content approvals</p><p><strong>Use Cases:</strong><br>Onboarding new team members faster<br>Storing SOPs and playbooks<br>Sharing training videos and guides with sub-accounts<br>Building a self-serve support hub for clients</p>',
+      '<h2>Resource Center</h2><p>Resource Center is a marketplace app that helps businesses increase user engagement via messages in a CRM application. Centralise your knowledge base, training materials, and support documentation so your team always has what they need at their fingertips.</p><p><strong>Key Features:</strong><br>Centralised document and media library<br>Role-based access for agency and sub-accounts<br>Instant search across all resources<br>Embeddable help widgets for any page<br>Version history and content approvals</p><p><strong>Use Cases:</strong><br>Onboarding new team members faster<br>Storing SOPs and playbooks<br>Sharing training videos and guides with sub-accounts<br>Building a self-serve support hub for clients</p>',
     bullets: [],
     tags: []
   },
@@ -57,7 +57,7 @@ export const appData = {
 
   whatsIncluded: {
     description:
-      'Resource Centre is a marketplace app that helps businesses increase user engagement via messages in a CRM application.',
+      'Resource Center is a marketplace app that helps businesses increase user engagement via messages in a CRM application.',
     conversationProviders: [
       { name: 'WAVV', type: 'Call', icon: 'phone' }
     ],
@@ -81,7 +81,7 @@ export const appData = {
       { name: 'Call started', description: 'This trigger activates when a call starts.', icon: 'volume2' }
     ],
     customTriggersExtra: 0,
-    snapshots: [{ name: 'Resource Centre integration assets', icon: 'eye' }],
+    snapshots: [{ name: 'Resource Center integration assets', icon: 'eye' }],
     webhooks: [
       { name: 'Contact created', description: 'Triggered when a new contact is created.', icon: 'bell' },
       { name: 'Contact updated', description: 'Triggered when contact information is updated.', icon: 'bell' }
@@ -113,12 +113,12 @@ export const appData = {
     supportEmail: 'support@highlevel.com',
     documentationUrl: 'https://help.highlevel.com/resource-centre',
     supportWebsiteUrl: 'https://highlevel.com/support',
-    supportPhone: '+1-888-732-4197'
+    supportPhone: '+1 (888) 732-4197'
   },
 
   appDetails: {
-    categories: ['Content Management', 'Knowledge Base', 'Productivity'],
-    businessNiche: ['Agency', 'SaaS', 'Professional Services'],
+    categories: ['Content management', 'Knowledge base', 'Productivity'],
+    businessNiche: ['Agency', 'SaaS', 'Professional services'],
     version: '2.4.1',
     updated: 'April 2026',
     developer: 'HighLevel'
@@ -131,7 +131,7 @@ export const appData = {
       { name: 'Support',        icon: 'support',    href: '#' },
       { name: 'Documentation',  icon: 'docs',       href: '#' },
       { name: 'Terms',          icon: 'terms',      href: '#' },
-      { name: 'Privacy Policy', icon: 'privacy',    href: '#' },
+      { name: 'Privacy policy', icon: 'privacy',    href: '#' },
       { name: 'Website',        icon: 'globe',      href: '#' }
     ]
   },
@@ -224,7 +224,7 @@ export const appData = {
         highlighted: false
       },
       {
-        name: 'Premium Plus',
+        name: 'Premium plus',
         price: '$797',
         period: '/ month',
         subtext: 'Ultimate solution',
@@ -301,8 +301,8 @@ export const appData = {
       name: 'Locations', icon: 'mapPin',
       description: 'Manage business locations and location data.',
       children: [
-        { name: 'CustomValues',  description: 'Customvalues will read and write.' },
-        { name: 'CustomFields',  description: 'Customfields will read and write.' },
+        { name: 'Custom values',  description: 'Customvalues will read and write.' },
+        { name: 'Custom fields',  description: 'Customfields will read and write.' },
         { name: 'Locations',     description: 'Locations will read and write.' },
         { name: 'Tags',          description: 'Tags will write and read.' },
         { name: 'Templates',     description: 'Templates will read.' },
@@ -339,7 +339,7 @@ export const appData = {
         { name: 'Transactions',    description: 'Transactions will read.' },
         { name: 'Subscriptions',   description: 'Subscriptions will read.' },
         { name: 'Coupons',         description: 'Coupons will read and write.' },
-        { name: 'Custom-provider', description: 'Custom-provider will read and write.' }
+        { name: 'Custom provider', description: 'Custom provider will read and write.' }
       ]
     },
     {
@@ -381,10 +381,10 @@ export const appData = {
       ]
     },
     {
-      name: 'Custom Menu Link', icon: 'menu',
+      name: 'Custom menu link', icon: 'menu',
       description: 'Create custom navigation links.',
       children: [
-        { name: 'Custom Menu Link', description: 'Custom Menu Link will read and write.' }
+        { name: 'Custom menu link', description: 'Custom menu link will read and write.' }
       ]
     },
     {
@@ -405,10 +405,10 @@ export const appData = {
       ]
     },
     {
-      name: 'Marketplace Installer Details', icon: 'package',
+      name: 'Marketplace installer details', icon: 'package',
       description: 'View app installation and usage data.',
       children: [
-        { name: 'Marketplace Installer Details', description: 'Marketplace Installer Details will read.' }
+        { name: 'Marketplace installer details', description: 'Marketplace installer details will read.' }
       ]
     },
     {
@@ -434,7 +434,7 @@ export const appData = {
       ]
     },
     {
-      name: 'Social Planner', icon: 'share2',
+      name: 'Social planner', icon: 'share2',
       description: 'Manage social media posts and scheduling.',
       children: [
         { name: 'Tag',        description: 'Tag will read and write.' },
@@ -481,10 +481,10 @@ export const appData = {
       ]
     },
     {
-      name: 'Affiliate Manager', icon: 'userPlus',
+      name: 'Affiliate manager', icon: 'userPlus',
       description: 'Manage affiliate relationships and tracking.',
       children: [
-        { name: 'Affiliate Manager', description: 'Affiliate Manager will read.' }
+        { name: 'Affiliate manager', description: 'Affiliate manager will read.' }
       ]
     },
     {
@@ -499,8 +499,8 @@ export const appData = {
       description: 'Manage blog posts and content.',
       children: [
         { name: 'Post',        description: 'Post will write.' },
-        { name: 'Post-update', description: 'Post-update will write.' },
-        { name: 'Check-slug',  description: 'Check-slug will read.' },
+        { name: 'Post update', description: 'Post update will write.' },
+        { name: 'Check slug',  description: 'Check slug will read.' },
         { name: 'Category',    description: 'Category will read.' },
         { name: 'Author',      description: 'Author will read.' },
         { name: 'Posts',       description: 'Posts will read.' },
@@ -508,18 +508,18 @@ export const appData = {
       ]
     },
     {
-      name: 'Brand Boards', icon: 'palette',
+      name: 'Brand boards', icon: 'palette',
       description: 'Manage brand assets and design kits.',
       children: [
-        { name: 'Design-kit', description: 'Design-kit will read and write.' },
+        { name: 'Design kit', description: 'Design kit will read and write.' },
         { name: 'Voices',     description: 'Voices will read and write.' }
       ]
     },
     {
-      name: 'Conversation Ai', icon: 'messageSquare',
+      name: 'Conversation AI', icon: 'messageSquare',
       description: 'Manage Conversation AI settings and data.',
       children: [
-        { name: 'Conversation Ai', description: 'Conversation Ai will read and write.' }
+        { name: 'Conversation AI', description: 'Conversation AI will read and write.' }
       ]
     },
     {
@@ -537,31 +537,31 @@ export const appData = {
       ]
     },
     {
-      name: 'Twilioaccount', icon: 'phone',
+      name: 'Twilio account', icon: 'phone',
       description: 'Access Twilio account data.',
       children: [
-        { name: 'Twilioaccount', description: 'Twilioaccount will read.' }
+        { name: 'Twilio account', description: 'Twilio account will read.' }
       ]
     },
     {
-      name: 'Voice Ai Dashboard', icon: 'barChart',
+      name: 'Voice AI dashboard', icon: 'barChart',
       description: 'View Voice AI dashboard analytics.',
       children: [
-        { name: 'Voice Ai Dashboard', description: 'Voice Ai Dashboard will read.' }
+        { name: 'Voice AI dashboard', description: 'Voice AI dashboard will read.' }
       ]
     },
     {
-      name: 'Voice Ai Agents', icon: 'volume2',
+      name: 'Voice AI agents', icon: 'volume2',
       description: 'Manage Voice AI agents.',
       children: [
-        { name: 'Voice Ai Agents', description: 'Voice Ai Agents will read and write.' }
+        { name: 'Voice AI agents', description: 'Voice AI agents will read and write.' }
       ]
     },
     {
-      name: 'Voice Ai Agent Goals', icon: 'target',
+      name: 'Voice AI agent goals', icon: 'target',
       description: 'Manage Voice AI agent goals.',
       children: [
-        { name: 'Voice Ai Agent Goals', description: 'Voice Ai Agent Goals will read and write.' }
+        { name: 'Voice AI agent goals', description: 'Voice AI agent goals will read and write.' }
       ]
     },
     {
@@ -572,10 +572,10 @@ export const appData = {
       ]
     },
     {
-      name: 'Lc Email', icon: 'mail',
+      name: 'LC email', icon: 'mail',
       description: 'Manage LC email communications.',
       children: [
-        { name: 'Lc Email', description: 'Lc Email will read.' }
+        { name: 'LC email', description: 'LC email will read.' }
       ]
     },
     {
@@ -586,46 +586,46 @@ export const appData = {
       ]
     },
     {
-      name: 'Recurring Tasks', icon: 'repeat',
+      name: 'Recurring tasks', icon: 'repeat',
       description: 'Manage recurring tasks and schedules.',
       children: [
-        { name: 'Recurring Tasks', description: 'Recurring Tasks will read and write.' }
+        { name: 'Recurring tasks', description: 'Recurring tasks will read and write.' }
       ]
     },
     {
-      name: 'Marketplace External Auth Migration', icon: 'shield',
+      name: 'Marketplace external auth migration', icon: 'shield',
       description: 'Manage external auth migrations.',
       children: [
-        { name: 'Marketplace External Auth Migration', description: 'Marketplace External Auth Migration will write.' }
+        { name: 'Marketplace external auth migration', description: 'Marketplace external auth migration will write.' }
       ]
     },
     {
-      name: 'Phonenumbers', icon: 'phone',
+      name: 'Phone numbers', icon: 'phone',
       description: 'Manage phone numbers.',
       children: [
-        { name: 'Phonenumbers', description: 'Phonenumbers will read and write.' }
+        { name: 'Phone numbers', description: 'Phone numbers will read and write.' }
       ]
     },
     {
-      name: 'Numberpools', icon: 'hash',
+      name: 'Number pools', icon: 'hash',
       description: 'View number pool data.',
       children: [
-        { name: 'Numberpools', description: 'Numberpools will read.' }
+        { name: 'Number pools', description: 'Number pools will read.' }
       ]
     },
     {
-      name: 'Documents_contracts', icon: 'fileText',
+      name: 'Document contracts', icon: 'fileText',
       description: 'Manage document contracts.',
       children: [
         { name: 'List',     description: 'List will read.' },
-        { name: 'SendLink', description: 'SendLink will write.' }
+        { name: 'Send link', description: 'Send link will write.' }
       ]
     },
     {
-      name: 'Documents_contracts_template', icon: 'fileText',
+      name: 'Document contract templates', icon: 'fileText',
       description: 'Manage document contract templates.',
       children: [
-        { name: 'SendLink', description: 'SendLink will write.' },
+        { name: 'Send link', description: 'Send link will write.' },
         { name: 'List',     description: 'List will read.' }
       ]
     }

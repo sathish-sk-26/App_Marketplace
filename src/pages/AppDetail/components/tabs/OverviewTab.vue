@@ -1122,67 +1122,67 @@ const monoIcons = {
   Facebook: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>`,
 }
 
-const agentBaseDescription = 'AI Sales Agent — Use Cases & Features for All Business Types 1. Use Cases This AI Sales Agent can be deployed across any type of business, automating sales, lead qualification, and follow-up with natural, conversational voice interactions. Examples of Use Cases Across Niches: SaaS & Software Companies: Automate demo bookings, capture leads, qualify prospects, and send payment links. Coaching & Consulting: Book strategy sessions, qualify client needs, provide answers to common questions, and send follow-ups. E-Commerce & Retail: Answer product questions, capture orders, confirm payments, and provide shipping updates. Marketing & Service Providers: Qualify potential clients, book consultation calls, and present service offerings. Professional Services (Legal, Accounting, etc.): Capture client details, schedule appointments, answer FAQs, and share relevant information. Healthcare & Wellness Providers: Book appointments, provide service information, and answer common patient queries. Any B2B or B2C Business: Fully adaptable to industry-specific offers, goals, and workflows. Key Benefit Across Use Cases: Dynamic Setup: Just fill out one simple form with your business name, offers, and key details — these are automatically used to customize the AI\'s prompts, responses, and conversation flow. Fast Deployment: The AI Sales Agent is trained and ready to go in under 60 seconds. 2. Features The AI Sales Agent includes these core features: Structured Sales Flow Captures accurate contact details first (name, email, phone) Greets prospects and qualifies their goals, challenges, and urgency Answers FAQs and redirects unknown questions Presents offers and guarantees persuasively Handles objections and re-engages if necessary Books appointments for follow-up Concludes calls professionally and warmly Customizable Experience Branded with your business name Conversation tone, voice, and scripts are automatically personalized using your form inputs Reads numbers and prices clearly for natural speech Integrated Workflows Appointment Booking & Follow-Up: Confirms sessions via email/SMS, sends reminders and prep materials, and automatically tags contacts in your CRM for tracking. Payment Confirmation: Sends secure payment links, confirms successful payments, updates records, and applies the correct CRM tags for reporting and automation. AI Knowledge & Training: Continuously improves qualification, objection handling, and responses over time. Adaptable to Any Business Type Works for SaaS, coaching, retail, professional services, healthcare, and more Customizable to match your products, offers, and services Optimized to convert leads and book appointments automatically Fallback & Unknown Question Handling Provides professional, general responses to off-topic questions Redirects conversations back to your offers and goals Analytics & Optimization Tracks leads, conversions, and interactions Provides insights for improving performance and results 3. Quick & Simple Setup Simply fill out one form, and all your details — business name, offer, pricing, FAQs — are dynamically added to the AI\'s prompt. No technical expertise needed. Your AI agent is ready to engage prospects in less than 60 seconds, automatically tagging contacts in your CRM for smooth follow-up and reporting.'
+const agentBaseDescription = 'AI Sales Agent — Use cases and features for all business types. 1. Use cases. This AI Sales Agent can be deployed across any type of business, automating sales, lead qualification, and follow-up with natural, conversational voice interactions. Examples of use cases across niches: SaaS and software companies: Automate demo bookings, capture leads, qualify prospects, and send payment links. Coaching and consulting: Book strategy sessions, qualify client needs, provide answers to common questions, and send follow-ups. E-commerce and retail: Answer product questions, capture orders, confirm payments, and provide shipping updates. Marketing and service providers: Qualify potential clients, book consultation calls, and present service offerings. Professional services (legal, accounting, etc.): Capture client details, schedule appointments, answer FAQs, and share relevant information. Healthcare and wellness providers: Book appointments, provide service information, and answer common patient queries. Any B2B or B2C business: Fully adaptable to industry-specific offers, goals, and workflows. Key benefit across use cases: Dynamic setup: Just fill out one simple form with your business name, offers, and key details — these are automatically used to customize the AI\'s prompts, responses, and conversation flow. Fast deployment: The AI Sales Agent is trained and ready to go in under 60 seconds. 2. Features. The AI Sales Agent includes these core features: Structured sales flow: Captures accurate contact details first (name, email, phone). Greets prospects and qualifies their goals, challenges, and urgency. Answers FAQs and redirects unknown questions. Presents offers and guarantees persuasively. Handles objections and re-engages if necessary. Books appointments for follow-up. Concludes calls professionally and warmly. Customizable experience: Branded with your business name. Conversation tone, voice, and scripts are automatically personalized using your form inputs. Reads numbers and prices clearly for natural speech. Integrated workflows: Appointment booking and follow-up: Confirms sessions via email/SMS, sends reminders and prep materials, and automatically tags contacts in your CRM for tracking. Payment confirmation: Sends secure payment links, confirms successful payments, updates records, and applies the correct CRM tags for reporting and automation. AI knowledge and training: Continuously improves qualification, objection handling, and responses over time. Adaptable to any business type: Works for SaaS, coaching, retail, professional services, healthcare, and more. Customizable to match your products, offers, and services. Optimized to convert leads and book appointments automatically. Fallback and unknown question handling: Provides professional, general responses to off-topic questions. Redirects conversations back to your offers and goals. Analytics and optimization: Tracks leads, conversions, and interactions. Provides insights for improving performance and results. 3. Quick and simple setup. Simply fill out one form, and all your details — business name, offer, pricing, FAQs — are dynamically added to the AI\'s prompt. No technical expertise needed. Your AI agent is ready to engage prospects in less than 60 seconds, automatically tagging contacts in your CRM for smooth follow-up and reporting.'
 
 const agents = [
   {
     id: 1,
-    name: 'AI Sales Agent',
+    name: 'AI sales agent',
     avatarIcon: monoIcons['SMS'],
     avatarBg: '#EFF4FF',
     avatarFg: '#155EEF',
     description: agentBaseDescription,
-    useCases: ['Lead Qualification & Appointment Booking'],
+    useCases: ['Lead qualification & appointment booking'],
     channels: [ch('SMS'), ch('Instagram'), ch('Facebook'), ch('WebChat'), ch('Live Chat'), ch('WhatsApp')],
   },
   {
     id: 2,
-    name: 'LiveChat Concierge',
+    name: 'LiveChat concierge',
     avatarIcon: monoIcons['Live Chat'],
     avatarBg: '#EFF4FF',
     avatarFg: '#155EEF',
-    description: 'LiveChat Concierge engages website visitors in real-time, answers product questions, qualifies leads, and routes high-intent prospects to your sales team. Configured for live chat channels with instant response handling, smart handoff triggers, and CRM contact creation on every conversation.',
-    useCases: ['Real-time Lead Engagement', 'Live Chat Support'],
+    description: 'LiveChat concierge engages website visitors in real-time, answers product questions, qualifies leads, and routes high-intent prospects to your sales team. Configured for live chat channels with instant response handling, smart handoff triggers, and CRM contact creation on every conversation.',
+    useCases: ['Real-time lead engagement', 'Live chat support'],
     channels: [ch('Live Chat'), ch('WebChat')],
   },
   {
     id: 3,
-    name: 'WhatsApp Concierge',
+    name: 'WhatsApp concierge',
     avatarIcon: monoIcons['WhatsApp'],
     avatarBg: '#ECFDF3',
     avatarFg: '#099250',
-    description: 'WhatsApp Concierge handles inbound messages on WhatsApp, nurturing leads through conversational flows, booking appointments, and sending payment links — all within the WhatsApp thread. Leverages WhatsApp\'s high open rates to maximize conversion and re-engagement.',
-    useCases: ['WhatsApp Lead Nurturing', 'Appointment Booking'],
+    description: 'WhatsApp concierge handles inbound messages on WhatsApp, nurturing leads through conversational flows, booking appointments, and sending payment links — all within the WhatsApp thread. Leverages WhatsApp\'s high open rates to maximize conversion and re-engagement.',
+    useCases: ['WhatsApp lead nurturing', 'Appointment booking'],
     channels: [ch('WhatsApp')],
   },
   {
     id: 4,
-    name: 'SMS Concierge',
+    name: 'SMS concierge',
     avatarIcon: monoIcons['SMS'],
     avatarBg: '#EFF4FF',
     avatarFg: '#155EEF',
-    description: 'SMS Concierge runs automated text-based sales conversations, following up on leads, confirming appointments, and collecting payments via SMS. Works 24/7 with no human intervention, sending personalized messages based on contact data from your CRM.',
-    useCases: ['SMS Follow-Up', 'Appointment Reminders'],
+    description: 'SMS concierge runs automated text-based sales conversations, following up on leads, confirming appointments, and collecting payments via SMS. Works 24/7 with no human intervention, sending personalized messages based on contact data from your CRM.',
+    useCases: ['SMS follow-up', 'Appointment reminders'],
     channels: [ch('SMS')],
   },
   {
     id: 5,
-    name: 'Instagram Concierge',
+    name: 'Instagram concierge',
     avatarIcon: monoIcons['Instagram'],
     avatarBg: '#FDF2FA',
     avatarFg: '#C11574',
-    description: 'Instagram Concierge responds to DMs and story replies on Instagram, converting social engagement into qualified leads. Captures contact details, qualifies intent, and books appointments directly from Instagram conversations — turning followers into customers.',
-    useCases: ['Social Lead Capture', 'DM Automation'],
+    description: 'Instagram concierge responds to DMs and story replies on Instagram, converting social engagement into qualified leads. Captures contact details, qualifies intent, and books appointments directly from Instagram conversations — turning followers into customers.',
+    useCases: ['Social lead capture', 'DM automation'],
     channels: [ch('Instagram')],
   },
   {
     id: 6,
-    name: 'Facebook Concierge',
+    name: 'Facebook concierge',
     avatarIcon: monoIcons['Facebook'],
     avatarBg: '#EFF8FF',
     avatarFg: '#1570EF',
-    description: 'Facebook Concierge automates Messenger conversations for ads, page DMs, and comment replies — qualifying leads, booking calls, and sending follow-up sequences. Integrates seamlessly with your Facebook page to turn ad traffic into booked appointments.',
-    useCases: ['Facebook Ads Follow-Up', 'Messenger Automation'],
+    description: 'Facebook concierge automates Messenger conversations for ads, page DMs, and comment replies — qualifying leads, booking calls, and sending follow-up sequences. Integrates seamlessly with your Facebook page to turn ad traffic into booked appointments.',
+    useCases: ['Facebook ads follow-up', 'Messenger automation'],
     channels: [ch('Facebook')],
   },
 ]
@@ -1216,27 +1216,27 @@ watch(agentVariation, () => {
 
 const agentActionGroups = [
   {
-    name: 'Appointment Booking',
+    name: 'Appointment booking',
     icon: 'calendar',
     bg: 'var(--success-50)',
     color: 'var(--success-600)',
     items: [
-      { name: 'Appointment Booking Action' }
+      { name: 'Appointment booking action' }
     ]
   },
   {
-    name: 'Human Hand Over',
+    name: 'Human handover',
     icon: 'users',
     bg: 'var(--warning-50)',
     color: 'var(--warning-600)',
     items: [
-      { name: 'Human Requested' },
+      { name: 'Human requested' },
       { name: 'Failed to resolve issue' },
       { name: 'Lack of information' }
     ]
   },
   {
-    name: 'Trigger Workflow',
+    name: 'Trigger workflow',
     icon: 'repeat',
     bg: 'var(--primary-50)',
     color: 'var(--primary-600)',
@@ -1245,12 +1245,12 @@ const agentActionGroups = [
     ]
   },
   {
-    name: 'Stop Bot',
+    name: 'Stop bot',
     icon: 'arrowLeft',
     bg: '#FEF3F2',
     color: '#D92D20',
     items: [
-      { name: 'Goodbye Detection' }
+      { name: 'Goodbye detection' }
     ]
   }
 ]

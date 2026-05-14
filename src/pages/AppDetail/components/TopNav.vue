@@ -14,7 +14,7 @@
         <button @click="router.push('/marketplace/ai-agents/E.D.I.D.H')" class="nav-link">AI agents</button>
         <a href="#" class="nav-link has-dot">
           Product updates
-          <span class="dot" aria-label="new updates" />
+          <span class="dot" aria-label="New updates" />
         </a>
       </nav>
 
