@@ -3,11 +3,6 @@
     <!-- 1. Sticky marketplace top nav -->
     <TopNav />
 
-    <!-- 2. Hero app header — full size, shown before scroll -->
-    <div ref="heroEl" class="container">
-      <AppHeader :app="appData" />
-    </div>
-
     <!-- 3. Sticky compact header — appears after scroll passes hero -->
     <div class="sticky-header" :class="{ visible: scrolled }">
       <div class="container compact-row">
@@ -77,23 +72,34 @@
     </div>
 
     <main class="container">
-      <!-- 4. Stats card -->
-      <AppStats :app="appData" @navigate-to-reviews="activeTab = 'reviews'" @navigate-to-pricing="activeTab = 'pricing'" />
+      <button class="back-link" type="button">
+        <Icon name="arrowLeft" :size="16" />
+        Back
+      </button>
+      <div class="app-card">
+        <!-- 2. Hero app header — full size, shown before scroll -->
+        <div ref="heroEl">
+          <AppHeader :app="appData" />
+        </div>
 
-      <!-- 5. Tab bar — visible when not scrolled -->
-      <div class="tabs-normal" :class="{ hidden: scrolled }">
-        <TabsBar :tabs="tabs" :active="activeTab" @update:active="activeTab = $event" />
+        <!-- 4. Stats card -->
+        <AppStats :app="appData" @navigate-to-reviews="activeTab = 'reviews'" @navigate-to-pricing="activeTab = 'pricing'" />
+
+        <!-- 5. Tab bar — visible when not scrolled -->
+        <div class="tabs-normal" :class="{ hidden: scrolled }">
+          <TabsBar :tabs="tabs" :active="activeTab" @update:active="activeTab = $event" />
+        </div>
+
+        <!-- 6. Tab panels -->
+        <section
+          :id="`panel-${activeTab}`"
+          role="tabpanel"
+          :aria-labelledby="`tab-${activeTab}`"
+          class="panel"
+        >
+          <component :is="tabComponent" :app="appData" />
+        </section>
       </div>
-
-      <!-- 6. Tab panels -->
-      <section
-        :id="`panel-${activeTab}`"
-        role="tabpanel"
-        :aria-labelledby="`tab-${activeTab}`"
-        class="panel"
-      >
-        <component :is="tabComponent" :app="appData" />
-      </section>
     </main>
   </div>
 </template>
@@ -173,7 +179,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.page { min-height: 100vh; background: var(--bg); }
+.page { min-height: 100vh; background: var(--gray-50); }
 
 /* Sticky compact header */
 .sticky-header {
@@ -300,9 +306,41 @@ onBeforeUnmount(() => {
 }
 .icon-btn:hover { background: var(--gray-50); }
 
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: var(--hr-text-sm);
+  font-weight: 500;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.back-link:hover {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+/* App card wrapper */
+.app-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
 /* Normal (non-sticky) tab bar */
 .tabs-normal { margin-top: 20px; }
 .tabs-normal.hidden { visibility: hidden; }
 
-.panel { padding-block: 24px 64px; }
+.panel { padding-block: 24px 0; }
 </style>

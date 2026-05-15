@@ -1,9 +1,5 @@
 <template>
   <div class="app-header" :class="{ compact }">
-    <button class="back-link" type="button">
-      <Icon name="arrowLeft" :size="16" />
-      Back
-    </button>
     <div class="header-row">
       <div class="identity">
         <div
@@ -184,7 +180,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.app-header { padding-block: 12px 24px; transition: padding .2s ease; }
+.app-header { padding-block: 0 28px; transition: padding .2s ease; }
 .back-link {
   display: inline-flex;
   align-items: center;
