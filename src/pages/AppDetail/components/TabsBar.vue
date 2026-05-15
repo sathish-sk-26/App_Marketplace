@@ -49,7 +49,7 @@ function move(dir) {
   position: relative;
   border: 0;
   background: transparent;
-  padding: 0 12px;
+  padding: 0 8px;
   font-size: var(--hr-text-sm);
   font-weight: 500;
   color: var(--gray-500);
@@ -63,7 +63,7 @@ function move(dir) {
 .tab.active::after {
   content: '';
   position: absolute;
-  inset-inline: 12px;
+  inset-inline: 8px;
   bottom: -1px;
   height: 2px;
   background: var(--primary-500);

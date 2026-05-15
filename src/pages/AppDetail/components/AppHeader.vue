@@ -23,6 +23,7 @@
               class="verified"
               aria-label="Verified app"
             />
+            <Link size="md" class="whats-new-link" @click="whatsNewOpen = true">What's new</Link>
           </h1>
           <p v-if="!compact" class="tagline">{{ app.tagline }}</p>
           <p v-if="app.developer" class="developer">By {{ app.developer }}</p>
@@ -87,12 +88,67 @@
         </p>
       </div>
     </div>
+
+    <!-- What's new modal -->
+    <div
+      v-if="whatsNewOpen"
+      class="whats-new-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="What's new"
+      @click.self="whatsNewOpen = false"
+    >
+      <div class="whats-new-modal">
+        <header class="whats-new-head">
+          <div>
+            <div class="whats-new-eyebrow">Version {{ app.appDetails?.version || '—' }} · {{ app.appDetails?.updated || '' }}</div>
+            <h2 class="whats-new-title">What's new in {{ app.name }}</h2>
+          </div>
+          <button class="whats-new-close" aria-label="Close" @click="whatsNewOpen = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </header>
+
+        <div class="whats-new-body">
+          <section class="whats-new-section">
+            <h3 class="whats-new-h3">New</h3>
+            <ul>
+              <li>Faster install flow with location pre-selection.</li>
+              <li>Granular permission cards with one-click reviewing.</li>
+              <li>Multi-channel concierge support across LiveChat, WhatsApp, SMS, Instagram, and Facebook.</li>
+            </ul>
+          </section>
+
+          <section class="whats-new-section">
+            <h3 class="whats-new-h3">Improvements</h3>
+            <ul>
+              <li>Sentence-case copy across the marketplace for clarity.</li>
+              <li>Updated permission icons with HighLevel design tokens.</li>
+              <li>Smarter "Show more" on long descriptions (now respects 8-line threshold).</li>
+            </ul>
+          </section>
+
+          <section class="whats-new-section">
+            <h3 class="whats-new-h3">Fixes</h3>
+            <ul>
+              <li>Resolved icon misalignment in stacked agent variation.</li>
+              <li>Fixed phone number formatting for international support contacts.</li>
+            </ul>
+          </section>
+        </div>
+
+        <footer class="whats-new-foot">
+          <button class="btn btn-primary" @click="whatsNewOpen = false">Got it</button>
+        </footer>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import Icon from '@/components/Icon.vue'
+import Link from '@/components/Link.vue'
 
 const props = defineProps({
   app: { type: Object, required: true },
@@ -102,6 +158,7 @@ const props = defineProps({
 
 const open = ref(false)
 const moreOpen = ref(false)
+const whatsNewOpen = ref(false)
 const scope = ref(props.app.defaultScope)
 const scopeSelectRef = ref(null)
 const moreSelectRef = ref(null)
@@ -165,7 +222,7 @@ onUnmounted(() => {
 .meta { min-width: 0; }
 .title {
   margin: 0;
-  font-size: var(--hr-text-3xl);
+  font-size: var(--hr-text-xl);
   font-weight: 700; color: var(--gray-900);
   display: inline-flex; align-items: center; gap: 8px;
   line-height: 1.2;
@@ -295,5 +352,85 @@ onUnmounted(() => {
 @media (max-width: 640px) {
   .header-row { gap: 12px; }
   .cta { width: 100%; justify-content: flex-end; }
+}
+
+/* What's new modal */
+.whats-new-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.whats-new-modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  width: min(560px, 100%);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.whats-new-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px 12px;
+  gap: 12px;
+}
+.whats-new-eyebrow {
+  font-size: var(--hr-text-xs);
+  color: var(--primary-600);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.whats-new-title {
+  margin: 0;
+  font-size: var(--hr-text-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+}
+.whats-new-close {
+  background: transparent;
+  border: 0;
+  color: var(--gray-500);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.whats-new-close:hover { background: var(--gray-100); color: var(--gray-700); }
+.whats-new-body {
+  padding: 4px 24px 16px;
+  overflow-y: auto;
+}
+.whats-new-section { margin-bottom: 16px; }
+.whats-new-section:last-child { margin-bottom: 0; }
+.whats-new-h3 {
+  margin: 0 0 8px;
+  font-size: var(--hr-text-sm);
+  font-weight: 600;
+  color: var(--gray-900);
+}
+.whats-new-section ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: var(--hr-text-sm);
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+.whats-new-foot {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 24px 20px;
+  border-top: 1px solid var(--border);
 }
 </style>
