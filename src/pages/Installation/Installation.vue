@@ -217,7 +217,7 @@ function getPermissionIcon(name) {
 .page { min-height: 100vh; background: var(--gray-50); padding-bottom: 80px; }
 
 .review-wrap {
-  padding: 24px 0;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;

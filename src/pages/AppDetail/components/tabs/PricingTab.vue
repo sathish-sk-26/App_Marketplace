@@ -401,8 +401,8 @@ onBeforeUnmount(() => {
   font-weight: 600; font-size: var(--hr-text-sm);
   border: 1px solid transparent;
 }
-.btn-primary { background: var(--primary-500); color: #fff; }
-.btn-primary:hover { background: var(--primary-600); }
+.btn-primary { background: var(--primary-600); color: #fff; }
+.btn-primary:hover { background: var(--primary-700); }
 .btn-secondary {
   background: var(--surface); color: var(--gray-900);
   border-color: var(--border);

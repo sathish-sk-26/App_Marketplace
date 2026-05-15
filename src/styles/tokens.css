@@ -46,6 +46,12 @@
   --yellow-400: #facc15;
   --yellow-500: #eab308;
 
+  /* Neutral black with alpha */
+  --color-neutral-black-opacity-025: rgba(0, 0, 0, 0.25);
+  --color-neutral-black-opacity-050: rgba(0, 0, 0, 0.50);
+  --color-neutral-black-opacity-075: rgba(0, 0, 0, 0.75);
+  --color-neutral-black-opacity-100: rgba(0, 0, 0, 1);
+
   /* Surface / radii / shadow */
   --surface:        #ffffff;
   --bg:             #ffffff;

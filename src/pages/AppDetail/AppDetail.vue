@@ -295,8 +295,8 @@ onBeforeUnmount(() => {
   font-size: var(--hr-text-sm);
   cursor: pointer;
 }
-.btn-primary { background: var(--primary-500); color: #fff; }
-.btn-primary:hover { background: var(--primary-600); }
+.btn-primary { background: var(--primary-600); color: #fff; }
+.btn-primary:hover { background: var(--primary-700); }
 
 .icon-btn {
   width: 36px; height: 36px; border-radius: 4px;

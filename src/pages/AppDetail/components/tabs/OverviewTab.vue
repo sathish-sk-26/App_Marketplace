@@ -296,9 +296,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getConvProvidersExtra > 0" class="show-more-btn" @click="expandedConvProviders = !expandedConvProviders">
+              <Link v-if="getConvProvidersExtra > 0" size="sm" class="show-more-link" @click="expandedConvProviders = !expandedConvProviders">
                 {{ expandedConvProviders ? 'View less' : `+ ${getConvProvidersExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -316,9 +316,9 @@
                   <span class="included-label">{{ js.name }}</span>
                 </div>
               </div>
-              <button v-if="getCustomJsExtra > 0" class="show-more-btn" @click="expandedCustomJs = !expandedCustomJs">
+              <Link v-if="getCustomJsExtra > 0" size="sm" class="show-more-link" @click="expandedCustomJs = !expandedCustomJs">
                 {{ expandedCustomJs ? 'View less' : `+ ${getCustomJsExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -339,9 +339,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getCustomActionsExtra > 0" class="show-more-btn" @click="expandedActions = !expandedActions">
+              <Link v-if="getCustomActionsExtra > 0" size="sm" class="show-more-link" @click="expandedActions = !expandedActions">
                 {{ expandedActions ? 'View less' : `+ ${getCustomActionsExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -362,9 +362,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getCustomTriggersExtra > 0" class="show-more-btn" @click="expandedTriggers = !expandedTriggers">
+              <Link v-if="getCustomTriggersExtra > 0" size="sm" class="show-more-link" @click="expandedTriggers = !expandedTriggers">
                 {{ expandedTriggers ? 'View less' : `+ ${getCustomTriggersExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -385,9 +385,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getSnapshotsExtra > 0" class="show-more-btn" @click="expandedSnapshots = !expandedSnapshots">
+              <Link v-if="getSnapshotsExtra > 0" size="sm" class="show-more-link" @click="expandedSnapshots = !expandedSnapshots">
                 {{ expandedSnapshots ? 'View less' : `+ ${getSnapshotsExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -575,9 +575,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getConvProvidersExtra > 0" class="show-more-btn" @click="expandedConvProviders = !expandedConvProviders">
+              <Link v-if="getConvProvidersExtra > 0" size="sm" class="show-more-link" @click="expandedConvProviders = !expandedConvProviders">
                 {{ expandedConvProviders ? 'View less' : `+ ${getConvProvidersExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -593,9 +593,9 @@
                   <span class="included-label">{{ js.name }}</span>
                 </div>
               </div>
-              <button v-if="getCustomJsExtra > 0" class="show-more-btn" @click="expandedCustomJs = !expandedCustomJs">
+              <Link v-if="getCustomJsExtra > 0" size="sm" class="show-more-link" @click="expandedCustomJs = !expandedCustomJs">
                 {{ expandedCustomJs ? 'View less' : `+ ${getCustomJsExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -614,9 +614,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getCustomActionsExtra > 0" class="show-more-btn" @click="expandedActions = !expandedActions">
+              <Link v-if="getCustomActionsExtra > 0" size="sm" class="show-more-link" @click="expandedActions = !expandedActions">
                 {{ expandedActions ? 'View less' : `+ ${getCustomActionsExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -635,9 +635,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getCustomTriggersExtra > 0" class="show-more-btn" @click="expandedTriggers = !expandedTriggers">
+              <Link v-if="getCustomTriggersExtra > 0" size="sm" class="show-more-link" @click="expandedTriggers = !expandedTriggers">
                 {{ expandedTriggers ? 'View less' : `+ ${getCustomTriggersExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -656,9 +656,9 @@
                   </div>
                 </div>
               </div>
-              <button v-if="getSnapshotsExtra > 0" class="show-more-btn" @click="expandedSnapshots = !expandedSnapshots">
+              <Link v-if="getSnapshotsExtra > 0" size="sm" class="show-more-link" @click="expandedSnapshots = !expandedSnapshots">
                 {{ expandedSnapshots ? 'View less' : `+ ${getSnapshotsExtra} more` }}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -747,9 +747,9 @@
               </div>
             </div>
           </div>
-          <button v-if="getConvProvidersExtra > 0" class="show-more-btn" @click="expandedConvProviders = !expandedConvProviders">
+          <Link v-if="getConvProvidersExtra > 0" size="sm" class="show-more-link" @click="expandedConvProviders = !expandedConvProviders">
             {{ expandedConvProviders ? 'View less' : `+ ${getConvProvidersExtra} more` }}
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -767,9 +767,9 @@
               <span class="included-label">{{ js.name }}</span>
             </div>
           </div>
-          <button v-if="getCustomJsExtra > 0" class="show-more-btn" @click="expandedCustomJs = !expandedCustomJs">
+          <Link v-if="getCustomJsExtra > 0" size="sm" class="show-more-link" @click="expandedCustomJs = !expandedCustomJs">
             {{ expandedCustomJs ? 'View less' : `+ ${getCustomJsExtra} more` }}
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -790,9 +790,9 @@
               </div>
             </div>
           </div>
-          <button v-if="getCustomActionsExtra > 0" class="show-more-btn" @click="expandedActions = !expandedActions">
+          <Link v-if="getCustomActionsExtra > 0" size="sm" class="show-more-link" @click="expandedActions = !expandedActions">
             {{ expandedActions ? 'View less' : `+ ${getCustomActionsExtra} more` }}
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -813,9 +813,9 @@
               </div>
             </div>
           </div>
-          <button v-if="getCustomTriggersExtra > 0" class="show-more-btn" @click="expandedTriggers = !expandedTriggers">
+          <Link v-if="getCustomTriggersExtra > 0" size="sm" class="show-more-link" @click="expandedTriggers = !expandedTriggers">
             {{ expandedTriggers ? 'View less' : `+ ${getCustomTriggersExtra} more` }}
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -836,9 +836,9 @@
               </div>
             </div>
           </div>
-          <button v-if="getSnapshotsExtra > 0" class="show-more-btn" @click="expandedSnapshots = !expandedSnapshots">
+          <Link v-if="getSnapshotsExtra > 0" size="sm" class="show-more-link" @click="expandedSnapshots = !expandedSnapshots">
             {{ expandedSnapshots ? 'View less' : `+ ${getSnapshotsExtra} more` }}
-          </button>
+          </Link>
         </div>
       </div>
       </template>
@@ -1423,7 +1423,7 @@ function iconFor(key) {
 .media-main .play {
   position: absolute; inset: 0; margin: auto;
   width: 56px; height: 56px; border-radius: 50%;
-  background: var(--error-500); color: #fff;
+  background: var(--color-neutral-black-opacity-075); color: #fff;
   display: inline-flex; align-items: center; justify-content: center;
   pointer-events: none;
 }
