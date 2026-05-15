@@ -282,7 +282,7 @@
         <!-- Variation 1 Content -->
         <div v-if="activeVariationTab === 'variation1'" class="variation-content-inner variation1">
           <!-- Conversation Provider -->
-          <div v-show="expandedSections || 1 <= 5" class="included-layout">
+          <div v-show="expandedSections || 1 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Conversation provider</h3>
             </div>
@@ -302,10 +302,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 1 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 1 <= 3" class="included-separator"></div>
 
           <!-- Custom JS -->
-          <div v-show="expandedSections || 2 <= 5" class="included-layout">
+          <div v-show="expandedSections || 2 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Custom JS</h3>
             </div>
@@ -322,10 +322,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 2 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 2 <= 3" class="included-separator"></div>
 
           <!-- Custom Actions -->
-          <div v-show="expandedSections || 3 <= 5" class="included-layout">
+          <div v-show="expandedSections || 3 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Custom actions</h3>
             </div>
@@ -345,10 +345,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 3 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 3 <= 3" class="included-separator"></div>
 
           <!-- Custom Triggers -->
-          <div v-show="expandedSections || 4 <= 5" class="included-layout">
+          <div v-show="expandedSections || 4 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Custom triggers</h3>
             </div>
@@ -368,10 +368,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 4 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 4 <= 3" class="included-separator"></div>
 
           <!-- Snapshots -->
-          <div v-show="expandedSections || 5 <= 5" class="included-layout">
+          <div v-show="expandedSections || 5 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Snapshots</h3>
             </div>
@@ -391,10 +391,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 5 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 5 <= 3" class="included-separator"></div>
 
           <!-- Webhooks -->
-          <div v-show="expandedSections || 6 <= 5" class="included-layout">
+          <div v-show="expandedSections || 6 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Webhooks</h3>
             </div>
@@ -411,10 +411,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 6 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 6 <= 3" class="included-separator"></div>
 
           <!-- Integrations -->
-          <div v-show="expandedSections || 7 <= 5" class="included-layout">
+          <div v-show="expandedSections || 7 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Integrations</h3>
             </div>
@@ -431,10 +431,10 @@
             </div>
           </div>
 
-          <div v-show="expandedSections || 7 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 7 <= 3" class="included-separator"></div>
 
           <!-- API Endpoints -->
-          <div v-show="expandedSections || 8 <= 5" class="included-layout">
+          <div v-show="expandedSections || 8 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">API endpoints</h3>
             </div>
@@ -463,7 +463,7 @@
         <!-- Variation 2 Content -->
         <div v-if="activeVariationTab === 'variation2'" class="variation-content-inner variation2">
           <!-- Conversation Provider -->
-          <div v-show="expandedSections || 1 <= 5" class="single-column-layout">
+          <div v-show="expandedSections || 1 <= 3" class="single-column-layout">
             <h3 class="included-heading">Conversation provider</h3>
             <div class="included-grid">
               <div v-for="(provider, idx) in app.whatsIncluded.conversationProviders" v-show="expandedConvProviders || idx < 5" :key="provider.name" class="included-card">
@@ -479,10 +479,10 @@
             </Link>
           </div>
 
-          <div v-show="expandedSections || 1 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 1 <= 3" class="included-separator"></div>
 
           <!-- Custom JS -->
-          <div v-show="expandedSections || 2 <= 5" class="single-column-layout">
+          <div v-show="expandedSections || 2 <= 3" class="single-column-layout">
             <h3 class="included-heading">Custom JS</h3>
             <div class="included-grid">
               <div v-for="(js, idx) in app.whatsIncluded.customJs" v-show="expandedCustomJs || idx < 5" :key="js.name" class="included-card">
@@ -495,10 +495,10 @@
             </Link>
           </div>
 
-          <div v-show="expandedSections || 2 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 2 <= 3" class="included-separator"></div>
 
           <!-- Custom Actions -->
-          <div v-show="expandedSections || 3 <= 5" class="single-column-layout">
+          <div v-show="expandedSections || 3 <= 3" class="single-column-layout">
             <h3 class="included-heading">Custom actions</h3>
             <div class="included-grid">
               <div v-for="(action, idx) in app.whatsIncluded.customActions" v-show="expandedActions || idx < 5" :key="action.name" class="included-card">
@@ -514,10 +514,10 @@
             </Link>
           </div>
 
-          <div v-show="expandedSections || 3 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 3 <= 3" class="included-separator"></div>
 
           <!-- Custom Triggers -->
-          <div v-show="expandedSections || 4 <= 5" class="single-column-layout">
+          <div v-show="expandedSections || 4 <= 3" class="single-column-layout">
             <h3 class="included-heading">Custom triggers</h3>
             <div class="included-grid">
               <div v-for="(trigger, idx) in app.whatsIncluded.customTriggers" v-show="expandedTriggers || idx < 5" :key="trigger.name" class="included-card">
@@ -533,10 +533,10 @@
             </Link>
           </div>
 
-          <div v-show="expandedSections || 4 <= 5" class="included-separator"></div>
+          <div v-show="expandedSections || 4 <= 3" class="included-separator"></div>
 
           <!-- Snapshots -->
-          <div v-show="expandedSections || 5 <= 5" class="single-column-layout">
+          <div v-show="expandedSections || 5 <= 3" class="single-column-layout">
             <h3 class="included-heading">Snapshots</h3>
             <div class="included-grid">
               <div v-for="(snapshot, idx) in app.whatsIncluded.snapshots" v-show="expandedSnapshots || idx < 5" :key="snapshot.name" class="included-card">
@@ -561,7 +561,7 @@
         <!-- Variation 3 Content -->
         <div v-if="activeVariationTab === 'variation3'" class="variation3-grid">
           <!-- Conversation Provider -->
-          <div v-show="expandedSections || 1 <= 5" class="included-layout">
+          <div v-show="expandedSections || 1 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Conversation provider</h3>
             </div>
@@ -582,7 +582,7 @@
           </div>
 
           <!-- Custom JS -->
-          <div v-show="expandedSections || 2 <= 5" class="included-layout">
+          <div v-show="expandedSections || 2 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Custom JS</h3>
             </div>
@@ -600,7 +600,7 @@
           </div>
 
           <!-- Custom Actions -->
-          <div v-show="expandedSections || 3 <= 5" class="included-layout">
+          <div v-show="expandedSections || 3 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Custom actions</h3>
             </div>
@@ -621,7 +621,7 @@
           </div>
 
           <!-- Custom Triggers -->
-          <div v-show="expandedSections || 4 <= 5" class="included-layout">
+          <div v-show="expandedSections || 4 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Custom triggers</h3>
             </div>
@@ -642,7 +642,7 @@
           </div>
 
           <!-- Snapshots -->
-          <div v-show="expandedSections || 5 <= 5" class="included-layout">
+          <div v-show="expandedSections || 5 <= 3" class="included-layout">
             <div class="included-left">
               <h3 class="included-heading">Snapshots</h3>
             </div>
@@ -733,7 +733,7 @@
 
       <!-- Conversation Provider -->
       <template v-if="false">
-      <div v-show="expandedConvProviders || 1 <= 5" class="included-layout">
+      <div v-show="expandedConvProviders || 1 <= 3" class="included-layout">
         <div class="included-left">
           <h3 class="included-heading">Conversation provider</h3>
         </div>
@@ -753,10 +753,10 @@
         </div>
       </div>
 
-      <div v-show="expandedConvProviders || 1 <= 5" class="included-separator"></div>
+      <div v-show="expandedConvProviders || 1 <= 3" class="included-separator"></div>
 
       <!-- Custom JS -->
-      <div v-show="expandedCustomJs || 2 <= 5" class="included-layout">
+      <div v-show="expandedCustomJs || 2 <= 3" class="included-layout">
         <div class="included-left">
           <h3 class="included-heading">Custom JS</h3>
         </div>
@@ -773,10 +773,10 @@
         </div>
       </div>
 
-      <div v-show="expandedCustomJs || 2 <= 5" class="included-separator"></div>
+      <div v-show="expandedCustomJs || 2 <= 3" class="included-separator"></div>
 
       <!-- Custom Actions -->
-      <div v-show="expandedActions || 3 <= 5" class="included-layout">
+      <div v-show="expandedActions || 3 <= 3" class="included-layout">
         <div class="included-left">
           <h3 class="included-heading">Custom actions</h3>
         </div>
@@ -796,10 +796,10 @@
         </div>
       </div>
 
-      <div v-show="expandedActions || 3 <= 5" class="included-separator"></div>
+      <div v-show="expandedActions || 3 <= 3" class="included-separator"></div>
 
       <!-- Custom Triggers -->
-      <div v-show="expandedTriggers || 4 <= 5" class="included-layout">
+      <div v-show="expandedTriggers || 4 <= 3" class="included-layout">
         <div class="included-left">
           <h3 class="included-heading">Custom triggers</h3>
         </div>
@@ -819,10 +819,10 @@
         </div>
       </div>
 
-      <div v-show="expandedTriggers || 4 <= 5" class="included-separator"></div>
+      <div v-show="expandedTriggers || 4 <= 3" class="included-separator"></div>
 
       <!-- Snapshots -->
-      <div v-show="expandedSnapshots || 5 <= 5" class="included-layout">
+      <div v-show="expandedSnapshots || 5 <= 3" class="included-layout">
         <div class="included-left">
           <h3 class="included-heading">Snapshots</h3>
         </div>
@@ -1325,7 +1325,7 @@ const totalSections = computed(() => {
   if (props.app.whatsIncluded.apiEndpoints?.length) count++
   return count
 })
-const hiddenSections = computed(() => Math.max(0, totalSections.value - 5))
+const hiddenSections = computed(() => Math.max(0, totalSections.value - 3))
 
 const whatsInsideSections = computed(() => {
   const wi = props.app.whatsIncluded || {}
