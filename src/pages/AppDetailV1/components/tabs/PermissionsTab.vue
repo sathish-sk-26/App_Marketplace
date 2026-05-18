@@ -44,7 +44,7 @@
 
         <div v-if="expandedIndex === index" class="permission-items">
           <ul class="permission-item-list">
-            <li v-for="(child, i) in permission.children" :key="i" class="item-description">{{ child.description }} <span v-if="child.sensitive" class="sensitive-badge">Sensitive</span></li>
+            <li v-for="(child, i) in permission.children" :key="i" class="item-description">{{ formatPermission(child.description) }} <span v-if="child.sensitive" class="sensitive-badge">Sensitive</span></li>
           </ul>
         </div>
       </div>
@@ -58,7 +58,7 @@
           <span class="permission-name">{{ permission.name }}</span>
         </div>
         <ul class="permission-card-list">
-          <li v-for="(child, i) in permission.children" :key="i">{{ child.description }} <span v-if="child.sensitive" class="sensitive-badge">Sensitive</span></li>
+          <li v-for="(child, i) in permission.children" :key="i">{{ formatPermission(child.description) }} <span v-if="child.sensitive" class="sensitive-badge">Sensitive</span></li>
         </ul>
       </div>
     </div>
@@ -71,7 +71,7 @@
           <span class="permission-name">{{ permission.name }}</span>
         </div>
         <ul class="permission-grid-list">
-          <li v-for="(child, i) in permission.children" :key="i">{{ child.description }} <span v-if="child.sensitive" class="sensitive-badge">Sensitive</span></li>
+          <li v-for="(child, i) in permission.children" :key="i">{{ formatPermission(child.description) }} <span v-if="child.sensitive" class="sensitive-badge">Sensitive</span></li>
         </ul>
       </div>
     </div>
@@ -168,8 +168,18 @@ function getIconStyle(index) {
   return { background: c.bg, color: c.fg }
 }
 
+function formatPermission(desc) {
+  if (!desc) return ''
+  const m = desc.match(/^(.+?)\s+will\s+(.+?)\.?\s*$/i)
+  if (!m) return desc
+  const subject = m[1].trim()
+  const actions = m[2].trim().replace(/\.$/, '').replace(/\bread\b/gi, 'Read').replace(/\bwrite\b/gi, 'Write')
+  const connector = /^Access\b/i.test(subject) ? 'to' : '-'
+  return `${subject} ${connector} ${actions}.`
+}
+
 function getCombinedDescription(children) {
-  return children.map(child => child.description).join(' and ')
+  return children.map(child => formatPermission(child.description)).join(' and ')
 }
 
 function getAccessTags(children) {

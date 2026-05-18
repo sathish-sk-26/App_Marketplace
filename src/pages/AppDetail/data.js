@@ -270,14 +270,14 @@ export const appData = {
       name: 'Companies', icon: 'building',
       description: 'Access company data and organizational information.',
       children: [
-        { name: 'Companies', description: 'Companies will read.' }
+        { name: 'Companies', description: 'Access will read.' }
       ]
     },
     {
       name: 'Conversations', icon: 'messageCircle',
       description: 'Manage messaging and communication with contacts.',
       children: [
-        { name: 'Conversations', description: 'Conversations will read and write.' },
+        { name: 'Conversations', description: 'Access will read and write.' },
         { name: 'Message',       description: 'Message will read and write.' },
         { name: 'Reports',       description: 'Reports will read.' },
         { name: 'Livechat',      description: 'Livechat will write.' }
@@ -287,14 +287,14 @@ export const appData = {
       name: 'Contacts', icon: 'users',
       description: 'View and manage contact information and details.',
       children: [
-        { name: 'Contacts', description: 'Contacts will read and write.' }
+        { name: 'Contacts', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Forms', icon: 'fileText',
       description: 'Create and manage forms for lead capture.',
       children: [
-        { name: 'Forms', description: 'Forms will read and write.' }
+        { name: 'Forms', description: 'Access will read and write.' }
       ]
     },
     {
@@ -303,8 +303,8 @@ export const appData = {
       children: [
         { name: 'Custom values',  description: 'Customvalues will read and write.' },
         { name: 'Custom fields',  description: 'Customfields will read and write.' },
-        { name: 'Locations',     description: 'Locations will read and write.' },
-        { name: 'Tags',          description: 'Tags will write and read.' },
+        { name: 'Locations', description: 'Access will read and write.' },
+        { name: 'Tags',          description: 'Tags will read and write.' },
         { name: 'Templates',     description: 'Templates will read.' },
         { name: 'Tasks',         description: 'Tasks will read and write.' }
       ]
@@ -313,21 +313,21 @@ export const appData = {
       name: 'Media', icon: 'image',
       description: 'Manage media files and assets.',
       children: [
-        { name: 'Media', description: 'Media will read and write.' }
+        { name: 'Media', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'OAuth', icon: 'lock',
       description: 'Manage OAuth authentication and security.',
       children: [
-        { name: 'OAuth', description: 'OAuth will write and read.' }
+        { name: 'OAuth', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Opportunities', icon: 'target',
       description: 'Create and manage sales opportunities and pipelines.',
       children: [
-        { name: 'Opportunities', description: 'Opportunities will read and write.' }
+        { name: 'Opportunities', description: 'Access will read and write.' }
       ]
     },
     {
@@ -346,7 +346,7 @@ export const appData = {
       name: 'Products', icon: 'box',
       description: 'Manage product catalog and pricing.',
       children: [
-        { name: 'Products',   description: 'Products will read and write.' },
+        { name: 'Products', description: 'Access will read and write.' },
         { name: 'Prices',     description: 'Prices will read and write.' },
         { name: 'Collection', description: 'Collection will read and write.' }
       ]
@@ -355,7 +355,7 @@ export const appData = {
       name: 'Snapshots', icon: 'camera',
       description: 'Manage data snapshots and backups.',
       children: [
-        { name: 'Snapshots', description: 'Snapshots will read and write.' }
+        { name: 'Snapshots', description: 'Access will read and write.' }
       ]
     },
     {
@@ -370,29 +370,29 @@ export const appData = {
       name: 'Users', icon: 'user',
       description: 'Manage user accounts and permissions.',
       children: [
-        { name: 'Users', description: 'Users will read.' },
-        { name: 'Users', description: 'Users will write.', sensitive: true }
+        { name: 'Users', description: 'Access will read.' },
+        { name: 'Users', description: 'Access will write.', sensitive: true  }
       ]
     },
     {
       name: 'Workflows', icon: 'workflow',
       description: 'View and manage automation workflows.',
       children: [
-        { name: 'Workflows', description: 'Workflows will read.' }
+        { name: 'Workflows', description: 'Access will read.' }
       ]
     },
     {
       name: 'Custom menu link', icon: 'menu',
       description: 'Create custom navigation links.',
       children: [
-        { name: 'Custom menu link', description: 'Custom menu link will read and write.' }
+        { name: 'Custom menu link', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Calendars', icon: 'calendar',
       description: 'Manage calendar events, schedules, and availability.',
       children: [
-        { name: 'Calendars', description: 'Calendars will write and read.' },
+        { name: 'Calendars', description: 'Access will read and write.' },
         { name: 'Events',    description: 'Events will read and write.' },
         { name: 'Groups',    description: 'Groups will read and write.' },
         { name: 'Resources', description: 'Resources will read and write.' }
@@ -402,14 +402,14 @@ export const appData = {
       name: 'Charges', icon: 'dollarSign',
       description: 'Manage charges and billing.',
       children: [
-        { name: 'Charges', description: 'Charges will read and write.' }
+        { name: 'Charges', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Marketplace installer details', icon: 'package',
       description: 'View app installation and usage data.',
       children: [
-        { name: 'Marketplace installer details', description: 'Marketplace installer details will read.' }
+        { name: 'Marketplace installer details', description: 'Access will read.' }
       ]
     },
     {
@@ -424,14 +424,14 @@ export const appData = {
       name: 'Businesses', icon: 'briefcase',
       description: 'View and manage business information and settings.',
       children: [
-        { name: 'Businesses', description: 'Businesses will read and write.' }
+        { name: 'Businesses', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Campaigns', icon: 'megaphone',
       description: 'Access marketing campaign data and analytics.',
       children: [
-        { name: 'Campaigns', description: 'Campaigns will read.' }
+        { name: 'Campaigns', description: 'Access will read.' }
       ]
     },
     {
@@ -459,7 +459,7 @@ export const appData = {
       name: 'Associations', icon: 'link2',
       description: 'Manage relationships between records.',
       children: [
-        { name: 'Associations', description: 'Associations will write and read.' },
+        { name: 'Associations', description: 'Access will read and write.' },
         { name: 'Relation',     description: 'Relation will read and write.' }
       ]
     },
@@ -475,7 +475,7 @@ export const appData = {
       name: 'Invoices', icon: 'file',
       description: 'Manage invoicing and billing information.',
       children: [
-        { name: 'Invoices', description: 'Invoices will read and write.' },
+        { name: 'Invoices', description: 'Access will read and write.' },
         { name: 'Schedule', description: 'Schedule will read and write.' },
         { name: 'Template', description: 'Template will read and write.' },
         { name: 'Estimate', description: 'Estimate will read and write.' }
@@ -485,14 +485,14 @@ export const appData = {
       name: 'Affiliate manager', icon: 'userPlus',
       description: 'Manage affiliate relationships and tracking.',
       children: [
-        { name: 'Affiliate manager', description: 'Affiliate manager will read.' }
+        { name: 'Affiliate manager', description: 'Access will read.' }
       ]
     },
     {
       name: 'Agent Studio', icon: 'bot',
       description: 'Build and configure AI agents.',
       children: [
-        { name: 'Agent Studio', description: 'Agent Studio will read and write.' }
+        { name: 'Agent Studio', description: 'Access will read and write.' }
       ]
     },
     {
@@ -520,98 +520,98 @@ export const appData = {
       name: 'Conversation AI', icon: 'messageSquare',
       description: 'Manage Conversation AI settings and data.',
       children: [
-        { name: 'Conversation AI', description: 'Conversation AI will read and write.' }
+        { name: 'Conversation AI', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Courses', icon: 'bookOpen',
       description: 'Manage online courses and content.',
       children: [
-        { name: 'Courses', description: 'Courses will write and read.' }
+        { name: 'Courses', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Surveys', icon: 'checkCircle',
       description: 'Create and distribute surveys.',
       children: [
-        { name: 'Surveys', description: 'Surveys will read.' }
+        { name: 'Surveys', description: 'Access will read.' }
       ]
     },
     {
       name: 'Twilio account', icon: 'phone',
       description: 'Access Twilio account data.',
       children: [
-        { name: 'Twilio account', description: 'Twilio account will read.' }
+        { name: 'Twilio account', description: 'Access will read.' }
       ]
     },
     {
       name: 'Voice AI dashboard', icon: 'barChart',
       description: 'View Voice AI dashboard analytics.',
       children: [
-        { name: 'Voice AI dashboard', description: 'Voice AI dashboard will read.' }
+        { name: 'Voice AI dashboard', description: 'Access will read.' }
       ]
     },
     {
       name: 'Voice AI agents', icon: 'volume2',
       description: 'Manage Voice AI agents.',
       children: [
-        { name: 'Voice AI agents', description: 'Voice AI agents will read and write.' }
+        { name: 'Voice AI agents', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Voice AI agent goals', icon: 'target',
       description: 'Manage Voice AI agent goals.',
       children: [
-        { name: 'Voice AI agent goals', description: 'Voice AI agent goals will read and write.' }
+        { name: 'Voice AI agent goals', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'WordPress', icon: 'globe',
       description: 'Access WordPress integration data.',
       children: [
-        { name: 'WordPress', description: 'WordPress will read.' }
+        { name: 'WordPress', description: 'Access will read.' }
       ]
     },
     {
       name: 'LC email', icon: 'mail',
       description: 'Manage LC email communications.',
       children: [
-        { name: 'LC email', description: 'LC email will read.' }
+        { name: 'LC email', description: 'Access will read.' }
       ]
     },
     {
       name: 'Links', icon: 'link',
       description: 'Manage tracking links and URL tracking.',
       children: [
-        { name: 'Links', description: 'Links will read and write.' }
+        { name: 'Links', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Recurring tasks', icon: 'repeat',
       description: 'Manage recurring tasks and schedules.',
       children: [
-        { name: 'Recurring tasks', description: 'Recurring tasks will read and write.' }
+        { name: 'Recurring tasks', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Marketplace external auth migration', icon: 'shield',
       description: 'Manage external auth migrations.',
       children: [
-        { name: 'Marketplace external auth migration', description: 'Marketplace external auth migration will write.' }
+        { name: 'Marketplace external auth migration', description: 'Access will write.' }
       ]
     },
     {
       name: 'Phone numbers', icon: 'phone',
       description: 'Manage phone numbers.',
       children: [
-        { name: 'Phone numbers', description: 'Phone numbers will read and write.' }
+        { name: 'Phone numbers', description: 'Access will read and write.' }
       ]
     },
     {
       name: 'Number pools', icon: 'hash',
       description: 'View number pool data.',
       children: [
-        { name: 'Number pools', description: 'Number pools will read.' }
+        { name: 'Number pools', description: 'Access will read.' }
       ]
     },
     {

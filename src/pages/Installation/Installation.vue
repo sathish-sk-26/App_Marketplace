@@ -171,6 +171,16 @@ import Tag from '@/components/Tag.vue'
 import { appData } from '@/pages/AppDetail/data.js'
 import { permissionIcons } from '@/pages/AppDetail/permissionIcons.js'
 
+function formatPermission(desc) {
+  if (!desc) return ''
+  const m = desc.match(/^(.+?)\s+will\s+(.+?)\.?\s*$/i)
+  if (!m) return desc
+  const subject = m[1].trim()
+  const actions = m[2].trim().replace(/\.$/, '').replace(/\bread\b/gi, 'Read').replace(/\bwrite\b/gi, 'Write')
+  const connector = /^Access\b/i.test(subject) ? 'to' : '-'
+  return `${subject} ${connector} ${actions}.`
+}
+
 const resources = appData.resources
 
 const copiedKey = ref('')
@@ -199,7 +209,7 @@ const permissions = appData.permissions
   .filter(p => !!permissionIcons[p.name])
   .map(p => ({
     name: p.name,
-    lines: p.children.map(c => ({ text: c.description, sensitive: !!c.sensitive })),
+    lines: p.children.map(c => ({ text: formatPermission(c.description), sensitive: !!c.sensitive })),
   }))
   .sort((a, b) => b.lines.length - a.lines.length)
 
