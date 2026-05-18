@@ -48,7 +48,10 @@
               <span class="perm-name">{{ perm.name }}</span>
             </div>
             <ul class="perm-card-list">
-              <li v-for="line in perm.lines" :key="line">{{ line }}</li>
+              <li v-for="(line, li) in perm.lines" :key="li">
+                {{ line.text }}
+                <span v-if="line.sensitive" class="sensitive-badge">Sensitive</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -196,7 +199,7 @@ const permissions = appData.permissions
   .filter(p => !!permissionIcons[p.name])
   .map(p => ({
     name: p.name,
-    lines: p.children.map(c => c.description),
+    lines: p.children.map(c => ({ text: c.description, sensitive: !!c.sensitive })),
   }))
   .sort((a, b) => b.lines.length - a.lines.length)
 
@@ -364,6 +367,18 @@ function getPermissionIcon(name) {
   line-height: 1.7;
 }
 .perm-card-list li { padding: 0; }
+.sensitive-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--error-50);
+  color: var(--error-600);
+  font-size: var(--hr-text-xs);
+  font-weight: 500;
+  vertical-align: middle;
+}
 @media (max-width: 960px) {
   .perm-grid { grid-template-columns: repeat(2, 1fr); }
 }

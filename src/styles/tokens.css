@@ -7,6 +7,10 @@
   --primary-50:  #eff4ff;
   --primary-100: #d1e0ff;
   --primary-200: #b2ccff;
+  --color-primary-blue-25:  var(--primary-25);
+  --color-primary-blue-50:  var(--primary-50);
+  --color-primary-blue-100: var(--primary-100);
+  --color-primary-blue-200: var(--primary-200);
   --primary-300: #84adff;
   --primary-400: #528bff;
   --primary-500: #2970ff;
