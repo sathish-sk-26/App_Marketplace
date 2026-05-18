@@ -79,31 +79,52 @@
   >
     <div class="locations-modal">
       <header class="locations-head">
-        <h2 class="locations-title">All Installed locations</h2>
-        <button class="locations-close" aria-label="Close" @click="locationsOpen = false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+        <div class="locations-head-row">
+          <div class="locations-head-text">
+            <h2 class="locations-title">{{ app.name }} app is installed in,</h2>
+            <p class="locations-subtitle">Each sub-account shows the current installed version.</p>
+          </div>
+          <button class="locations-close" aria-label="Close" @click="locationsOpen = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
       </header>
 
-      <div class="locations-search">
+      <div class="locations-body">
         <div class="search-input">
           <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.66634 2.66634C4.90492 2.66634 2.66634 4.90492 2.66634 7.66634C2.66634 10.4278 4.90492 12.6663 7.66634 12.6663C9.00841 12.6663 10.227 12.1376 11.1251 11.277C11.1458 11.2483 11.1691 11.2208 11.195 11.1949C11.2209 11.1691 11.2483 11.1458 11.2771 11.125C12.1376 10.2269 12.6663 9.00838 12.6663 7.66634C12.6663 4.90492 10.4278 2.66634 7.66634 2.66634ZM12.5914 11.6485C13.4721 10.5606 13.9997 9.17509 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997C9.17512 13.9997 10.5607 13.4721 11.6486 12.5913L13.5283 14.4711C13.7886 14.7314 14.2107 14.7314 14.4711 14.4711C14.7314 14.2107 14.7314 13.7886 14.4711 13.5283L12.5914 11.6485Z" fill="#98A2B3"/>
           </svg>
-          <input v-model="locationsQuery" type="search" placeholder="Search sub-accounts" />
+          <input v-model="locationsQuery" type="search" placeholder="Search sub-account" />
         </div>
-      </div>
 
-      <ul class="locations-list">
-        <li v-for="loc in filteredLocations" :key="loc.name" class="location-row">
-          <span class="location-avatar">{{ loc.name.charAt(0).toUpperCase() }}</span>
-          <div class="location-meta">
-            <div class="location-name">{{ loc.name }}</div>
-            <div v-if="loc.address" class="location-address">{{ loc.address }}</div>
-          </div>
-        </li>
-        <li v-if="!filteredLocations.length" class="location-empty">No sub-accounts match your search.</li>
-      </ul>
+        <table class="locations-table">
+          <thead>
+            <tr>
+              <th>Sub-account</th>
+              <th class="version-col">Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="loc in filteredLocations" :key="loc.name">
+              <td>
+                <div class="sub-name">{{ loc.name }}</div>
+                <div v-if="loc.location" class="sub-location">{{ loc.location }}</div>
+              </td>
+              <td class="version-col">
+                <span v-if="loc.draft" class="version-pill version-pill--draft">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-11V3"/></svg>
+                  Draft
+                </span>
+                <span v-else class="version-pill">v {{ loc.version }}</span>
+              </td>
+            </tr>
+            <tr v-if="!filteredLocations.length">
+              <td colspan="2" class="location-empty">No sub-accounts match your search.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -124,22 +145,22 @@ const isActive = (arr, value) => Array.isArray(arr) ? arr.includes(value) : fals
 const locationsOpen = ref(false)
 const locationsQuery = ref('')
 const allLocations = [
-  { name: "Jorge's Watch Repair (demo)" },
-  { name: 'V2 Industry - Creative - Tattoo Shop', address: '555 Main' },
-  { name: 'Speed', address: '7 PD, Pune' },
-  { name: 'Affiliate Accelerator', address: '4821 Pine Ridge Trail' },
-  { name: 'Ask AI - Andrew Test 3', address: '400 North Saint Paul St, Suite 925A' },
-  { name: 'Ask AI - Andrew Test 2', address: '400 North Saint Paul St, Suite 925A' },
-  { name: 'Ask AI - Andrew Test', address: '400 North Saint Paul St, Suite 925A' },
-  { name: 'V2 Industry - Business Coaching & Consulting - Real Estate', address: '420 Market St' },
-  { name: 'V2 Industry - Health & Wellness - Med Spa', address: '120 Elm Ave' },
-  { name: 'Bright Roots Studio', address: '88 Birch Way' },
-  { name: 'Northwind Plumbing', address: '17 Ocean Blvd' },
-  { name: 'Olive & Co Marketing', address: '321 Sycamore Ln' },
-  { name: 'Bark & Beyond', address: '910 Oak Park Rd' },
-  { name: 'TechScale Agency', address: '24 Innovation Dr' },
-  { name: 'YUNG\'NRICH', address: '11 King St' },
-  { name: "Chacho's Kids", address: '7 Sunshine Ave' }
+  { name: 'HighLevel test',       location: '1535 Broadway, New York',     version: '1.0.0' },
+  { name: 'Test page',            location: '420 Market St, San Francisco', version: '1.1.0' },
+  { name: 'Personal page',        location: '88 Birch Way, Austin',         version: '1.1.0' },
+  { name: 'Chennai central',      location: 'T Nagar, Chennai',             version: '1.0.0' },
+  { name: 'My test',              location: 'Bandra West, Mumbai',          draft: true },
+  { name: "Arjun's acc",          location: 'Sector 18, Noida',             version: '1.0.0' },
+  { name: 'Test sub acc',         location: 'Indiranagar, Bengaluru',       version: '1.0.0' },
+  { name: 'Home',                 location: 'Anna Nagar, Chennai',          version: '1.0.0' },
+  { name: 'Bright Roots Studio',  location: '88 Birch Way, Portland',       version: '1.0.0' },
+  { name: 'Northwind Plumbing',   location: '17 Ocean Blvd, Miami',         version: '1.1.0' },
+  { name: 'Olive & Co Marketing', location: '321 Sycamore Ln, Seattle',     version: '1.0.0' },
+  { name: 'Bark & Beyond',        location: '910 Oak Park Rd, Denver',      version: '1.0.0' },
+  { name: 'TechScale Agency',     location: '24 Innovation Dr, Boston',     version: '1.1.0' },
+  { name: "YUNG'NRICH",           location: '11 King St, London',           version: '1.0.0' },
+  { name: "Chacho's Kids",        location: '7 Sunshine Ave, Phoenix',      version: '1.0.0' },
+  { name: 'Speed sub acc',        location: '7 PD, Pune',                   draft: true }
 ]
 const visibleLocations = computed(() => {
   const count = Math.max(0, props.app.subAccountInstalls || 0)
@@ -147,7 +168,7 @@ const visibleLocations = computed(() => {
   const out = [...allLocations]
   while (out.length < count) {
     const src = allLocations[out.length % allLocations.length]
-    out.push({ name: `${src.name} #${Math.floor(out.length / allLocations.length) + 1}`, address: src.address })
+    out.push({ ...src, name: `${src.name} #${Math.floor(out.length / allLocations.length) + 1}` })
   }
   return out
 })
@@ -155,8 +176,7 @@ const filteredLocations = computed(() => {
   const q = locationsQuery.value.trim().toLowerCase()
   if (!q) return visibleLocations.value
   return visibleLocations.value.filter(l =>
-    l.name.toLowerCase().includes(q) ||
-    (l.address && l.address.toLowerCase().includes(q))
+    l.name.toLowerCase().includes(q) || (l.location && l.location.toLowerCase().includes(q))
   )
 })
 </script>
@@ -273,7 +293,7 @@ const filteredLocations = computed(() => {
 }
 .locations-modal {
   background: var(--surface);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   width: min(560px, 100%);
   max-height: 600px;
   display: flex;
@@ -283,15 +303,29 @@ const filteredLocations = computed(() => {
 }
 .locations-head {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px 12px;
+  padding: 16px 16px 0 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
 }
+.locations-head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+.locations-head-text { display: flex; flex-direction: column; gap: 4px; }
 .locations-title {
   margin: 0;
   font-size: var(--hr-text-lg);
   font-weight: 600;
   color: var(--gray-900);
+}
+.locations-subtitle {
+  margin: 0;
+  font-size: var(--hr-text-sm);
+  color: var(--gray-600);
 }
 .locations-close {
   background: transparent;
@@ -307,7 +341,17 @@ const filteredLocations = computed(() => {
   flex-shrink: 0;
 }
 .locations-close:hover { background: var(--gray-100); color: var(--gray-700); }
-.locations-search { padding: 0 24px 12px; }
+.locations-body {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+}
 .search-input {
   display: flex;
   align-items: center;
@@ -319,69 +363,79 @@ const filteredLocations = computed(() => {
   border: 1px solid var(--gray-300, #D0D5DD);
   background: var(--surface, #FFF);
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  box-sizing: border-box;
 }
 .search-input:focus-within { border-color: var(--primary-500); }
 .search-icon { flex-shrink: 0; color: #98A2B3; }
 .search-input input {
   flex: 1;
   min-width: 0;
-  height: 100%;
+  height: 34px;
+  margin: 0;
+  padding: 0;
   border: 0;
   background: transparent;
   outline: none;
   color: var(--gray-900);
   font-family: Inter, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 400;
-  letter-spacing: 0;
+  box-sizing: border-box;
 }
 .search-input input::placeholder { color: var(--gray-500, #667085); }
 .search-input input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
-.locations-list {
-  margin: 0;
-  padding: 0 12px 16px;
-  list-style: none;
+
+/* Table */
+.locations-table {
+  width: 100%;
+  border-collapse: collapse;
   overflow-y: auto;
+  display: block;
+  flex: 1;
+  min-height: 0;
 }
-.location-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.locations-table thead { position: sticky; top: 0; background: var(--gray-50); z-index: 1; }
+.locations-table thead tr,
+.locations-table tbody tr { display: table; width: 100%; table-layout: fixed; }
+.locations-table tbody { display: block; }
+.locations-table th {
+  text-align: left;
   padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-}
-.location-row:hover { background: var(--gray-50); }
-.location-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--gray-100);
-  color: var(--gray-700);
-  font-weight: 600;
   font-size: var(--hr-text-sm);
+  font-weight: 600;
+  color: var(--gray-900);
+  border-bottom: 1px solid var(--border);
+  background: var(--gray-50);
+}
+.locations-table td {
+  padding: 8px 12px;
+  font-size: var(--hr-text-sm);
+  color: var(--gray-900);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.sub-name { font-weight: 500; color: var(--gray-900); }
+.sub-location { font-size: var(--hr-text-xs); color: var(--gray-500); margin-top: 2px; }
+.locations-table tbody tr:last-child td { border-bottom: 0; }
+.locations-table .version-col { width: 140px; }
+.version-pill {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.location-meta { min-width: 0; }
-.location-name {
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: var(--primary-50);
+  color: var(--primary-700);
   font-size: var(--hr-text-sm);
   font-weight: 500;
-  color: var(--gray-900);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
-.location-address {
-  font-size: var(--hr-text-xs);
-  color: var(--gray-500);
-  margin-top: 2px;
+.version-pill--draft {
+  background: var(--gray-100);
+  color: var(--gray-700);
 }
 .location-empty {
-  padding: 16px 12px;
+  padding: 24px 16px;
   text-align: center;
   color: var(--gray-500);
   font-size: var(--hr-text-sm);
