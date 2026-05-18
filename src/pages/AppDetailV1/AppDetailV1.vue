@@ -45,7 +45,7 @@
           </div>
           <span class="cta-divider" aria-hidden="true"></span>
           <button class="btn btn-primary">Update</button>
-          <button class="btn btn-primary btn-install" title="Install to more sub-accounts" aria-label="Install to more sub-accounts">
+          <button class="btn btn-primary btn-install" title="Install to more sub-accounts" aria-label="Install to more sub-accounts" @click="stickyInstallOpen = true">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             Install
           </button>
@@ -56,7 +56,7 @@
               </svg>
             </button>
             <ul v-if="stickyMoreOpen" class="more-menu" role="menu">
-              <li role="menuitem" @click="stickyMoreOpen = false">
+              <li role="menuitem" class="uninstall-item" @click="stickyMoreOpen = false; stickyUninstallOpen = true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="3 6 5 6 21 6"></polyline>
                   <path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"></path>
@@ -104,6 +104,26 @@
         </section>
       </div>
     </main>
+
+    <InstallSubaccountsModal
+      :open="stickyInstallOpen"
+      :app-name="appData.name"
+      :next-version="'3.0.0'"
+      :count="appData.subAccountInstalls"
+      @close="stickyInstallOpen = false"
+      @next="stickyInstallOpen = false"
+    />
+
+    <InstallSubaccountsModal
+      :open="stickyUninstallOpen"
+      :app-name="appData.name"
+      :next-version="'3.0.0'"
+      :count="appData.subAccountInstalls"
+      title="Select Sub-Account to Uninstall"
+      subtitle="To continue with app uninstallation"
+      @close="stickyUninstallOpen = false"
+      @next="stickyUninstallOpen = false"
+    />
   </div>
 </template>
 
@@ -118,6 +138,7 @@ import AppHeader  from './components/AppHeader.vue'
 import AppStats   from './components/AppStats.vue'
 import TabsBar    from './components/TabsBar.vue'
 import Icon       from '@/components/Icon.vue'
+import InstallSubaccountsModal from '@/components/InstallSubaccountsModal.vue'
 
 import OverviewTab            from './components/tabs/OverviewTab.vue'
 import PricingTab             from './components/tabs/PricingTab.vue'
@@ -151,6 +172,8 @@ const heroEl = ref(null)
 
 const stickyOpen = ref(false)
 const stickyMoreOpen = ref(false)
+const stickyInstallOpen = ref(false)
+const stickyUninstallOpen = ref(false)
 const stickyScope = ref(appData.defaultScope)
 const scopeSelectRef = ref(null)
 const stickyMoreRef = ref(null)
@@ -284,6 +307,15 @@ onBeforeUnmount(() => {
   transition: background 0.2s ease;
 }
 .compact-cta .more-menu li:hover { background: var(--gray-50); }
+.compact-cta .more-menu li.uninstall-item {
+  color: var(--color-secondary-error-500, #F04438);
+}
+.compact-cta .more-menu li.uninstall-item svg { color: var(--color-secondary-error-500, #F04438); }
+.compact-cta .more-menu li.uninstall-item:hover {
+  background: var(--error-50, #FEF3F2);
+  color: var(--error-700, #B42318);
+}
+.compact-cta .more-menu li.uninstall-item:hover svg { color: var(--error-700, #B42318); }
 .compact-cta .icon-btn {
   width: 40px; height: 40px;
 }

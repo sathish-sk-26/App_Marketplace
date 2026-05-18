@@ -48,6 +48,7 @@ const router = useRouter()
   display: flex;
   align-items: center;
   gap: 32px;
+  padding: 24px;
 }
 .brand {
   display: flex; align-items: center; gap: 8px;
