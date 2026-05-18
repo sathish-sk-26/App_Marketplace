@@ -2,6 +2,13 @@
   <div class="page">
     <TopNav />
 
+    <div class="container">
+      <button class="back-link" type="button">
+        <Icon name="arrowLeft" :size="16" />
+        Back
+      </button>
+    </div>
+
     <div class="container review-wrap">
       <!-- Install confirmation -->
       <section class="review-card">
@@ -156,6 +163,7 @@
 <script setup>
 import { ref } from 'vue'
 import TopNav from '@/pages/AppDetail/components/TopNav.vue'
+import Icon from '@/components/Icon.vue'
 import Tag from '@/components/Tag.vue'
 import { appData } from '@/pages/AppDetail/data.js'
 import { permissionIcons } from '@/pages/AppDetail/permissionIcons.js'
@@ -216,8 +224,29 @@ function getPermissionIcon(name) {
 <style scoped>
 .page { min-height: 100vh; background: var(--gray-50); padding-bottom: 80px; }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: var(--hr-text-sm);
+  font-weight: 500;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.back-link:hover {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
 .review-wrap {
-  padding: 24px;
+  padding: 12px 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
