@@ -45,7 +45,10 @@
           </div>
           <span class="cta-divider" aria-hidden="true"></span>
           <button class="btn btn-primary">Update</button>
-          <button class="btn btn-primary">Install to more sub-accounts</button>
+          <button class="btn btn-primary btn-install" title="Install to more sub-accounts" aria-label="Install to more sub-accounts">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Install
+          </button>
           <div class="more-select" ref="stickyMoreRef">
             <button class="icon-btn" aria-label="More actions" :aria-expanded="stickyMoreOpen" @click="stickyMoreOpen = !stickyMoreOpen">
               <svg xmlns="http://www.w3.org/2000/svg" width="3" height="14" viewBox="0 0 3 14" fill="none">
@@ -297,6 +300,7 @@ onBeforeUnmount(() => {
 }
 .btn-primary { background: var(--primary-600); color: #fff; }
 .btn-primary:hover { background: var(--primary-700); }
+.btn-install { display: inline-flex; align-items: center; gap: 6px; padding: 0 14px; }
 
 .icon-btn {
   width: 36px; height: 36px; border-radius: 4px;
