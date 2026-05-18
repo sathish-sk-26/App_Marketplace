@@ -8,7 +8,7 @@ import Installation from '@/pages/Installation/Installation.vue'
 export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'Home', component: AppDetailV1 },
+    { path: '/', name: 'Home', component: AppDetail },
     { path: '/marketplace/apps/:id', name: 'AppDetail', component: AppDetail },
     { path: '/marketplace/apps-v1/:id', name: 'AppDetailV1', component: AppDetailV1 },
     { path: '/marketplace/ai-agents/:id', name: 'AIAgentDetail', component: AIAgentDetail },
