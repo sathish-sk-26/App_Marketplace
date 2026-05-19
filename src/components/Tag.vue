@@ -64,9 +64,17 @@ const sizeStyle = computed(() => {
   color: var(--tag-gray-label-color-default, #344054);
 }
 .tag.warning {
-  background: #FFFAEB;
-  color: #B54708;
-  border-color: #FEDF89;
+  border-radius: 12px;
+  border: 1px solid var(--tag-warning-border-default, #DC6803);
+  background: var(--tag-warning-background-default, #FFFAEB);
+  color: var(--tag-warning-label-color-default, #B54708);
+  text-align: center;
+  font-family: Inter;
+  font-size: var(--font-size-xs, 11px);
+  font-style: normal;
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--font-line-height-xs, 16px);
+  letter-spacing: var(--font-letter-spacing-normal, 0);
 }
 .tag.rounded {
   border-radius: 999px;

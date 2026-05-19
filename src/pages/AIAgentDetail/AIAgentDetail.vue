@@ -202,6 +202,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .page {
   min-height: 100vh;
+  padding-bottom: 20px;
   background:
     linear-gradient(180deg, #e6e3ff 0%, rgba(230, 227, 255, 0) 70%) top / 100% 420px no-repeat fixed,
     var(--gray-50);

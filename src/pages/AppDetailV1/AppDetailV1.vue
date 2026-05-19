@@ -205,7 +205,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.page { min-height: 100vh; background: var(--gray-50); }
+.page { min-height: 100vh; background: var(--gray-50); padding-bottom: 20px; }
 
 /* Sticky compact header */
 .sticky-header {
